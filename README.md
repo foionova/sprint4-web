@@ -1,4 +1,4 @@
-# Projeto Web - Passa Bola (Sprint 3)
+# Projeto Web - Passa Bola (Sprint 4)
 
 ## 📌 Sobre o Projeto
 Este projeto foi desenvolvido como parte da disciplina de **Desenvolvimento Web**.  
