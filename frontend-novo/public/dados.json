@@ -1,0 +1,8 @@
+{
+  "times": [
+    { "id": 1, "nome": "Corinthians", "pontos": 45, "favorito": false },
+    { "id": 2, "nome": "Palmeiras", "pontos": 62, "favorito": false },
+    { "id": 3, "nome": "São Paulo", "pontos": 50, "favorito": false },
+    { "id": 4, "nome": "Santos", "pontos": 40, "favorito": false }
+  ]
+}
