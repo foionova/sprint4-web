@@ -92,3 +92,13 @@ Tema claro/escuro (botão global no App.jsx)
 ProtectedRoute.jsx verifica token no localStorage
 Páginas protegidas: /, /times, /partidas, /classificacao
 Páginas públicas: /login, /cadastro
+
+## 👨‍💻 Grupo Cristian Belasco Arancibia – RM: 565710
+
+João Lucas Ferreira dos Santos – RM: 562608
+
+Felipe Yamaguchi Mesquita – RM: 556170
+
+Samuel de Oliveira da Silva – RM: 566244
+
+Rafael Félix – RM: 565855
