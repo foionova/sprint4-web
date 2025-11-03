@@ -93,7 +93,8 @@ ProtectedRoute.jsx verifica token no localStorage
 Páginas protegidas: /, /times, /partidas, /classificacao
 Páginas públicas: /login, /cadastro
 
-## 👨‍💻 Grupo Cristian Belasco Arancibia – RM: 565710
+## 👨‍💻 Grupo 
+Cristian Belasco Arancibia – RM: 565710
 
 João Lucas Ferreira dos Santos – RM: 562608
 
