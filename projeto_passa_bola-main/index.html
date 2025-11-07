@@ -80,13 +80,6 @@
                class="w-full h-full object-cover">
         </a>
 
-        <!-- Logout -->
-        <button
-          id="btn-logout"
-          class="text-xs px-3 py-2 border border-dark-600 rounded-lg text-gray-300 hover:bg-dark-700"
-        >
-          Sair
-        </button>
         
         <!-- Botão menu mobile (se quiser ligar depois no JS) -->
         <button id="menu-button" class="md:hidden hover:text-brand-purple-light transition-colors p-1">
@@ -141,11 +134,6 @@
       window.location.href = 'src/pages/entrar.html';
     }
 
-    // Logout
-    document.getElementById('btn-logout').addEventListener('click', () => {
-      localStorage.removeItem('authToken');
-      window.location.href = 'src/pages/entrar.html';
-    });
 
     const resumoDiv = document.getElementById('resumo');
     const listaPartidas = document.getElementById('lista-partidas');
