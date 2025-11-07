@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórias - Mundo do Futebol Feminino</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+        body { font-family: 'Poppins', sans-serif; }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            purple: '#6D28D9',
+                            'purple-light': '#8B5CF6',
+                            'purple-hover': '#5821b0',
+                            lavender: '#C4B5FD'
+                        },
+                        dark: {
+                            100: '#EAEAEA',
+                            300: '#B2B2B2',
+                            600: '#2c2c2c',
+                            700: '#1f1f1f',
+                            800: '#1c1c1c',
+                            900: '#121212'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark-900 text-dark-100 min-h-screen">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
+        
+        <a href="../../index.html"
+            class="inline-flex items-center gap-2 text-gray-400 hover:text-brand-purple mb-6 sm:mb-10 transition-colors text-sm sm:text-base font-medium">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+            </svg>
+            <span>Voltar</span>
+        </a>
+
+        <header class="text-center my-6 sm:my-10">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-purple">Histórias que Inspiram</h1>
+            <p class="text-gray-400 mt-2 text-lg">Conheça as atletas e pioneiras que moldaram o futebol feminino.</p>
+        </header>
+
+        <nav class="border-b border-dark-700 mb-8 sm:mb-12">
+            <div class="flex flex-wrap justify-center gap-4 sm:gap-8 text-sm sm:text-base font-semibold">
+                <a href="noticias.html"
+                    class="py-3 sm:py-4 px-2 text-gray-400 hover:text-brand-purple-light border-b-2 border-transparent hover:border-brand-purple-light transition-colors">Notícias</a>
+                <a href="historias.html"
+                    class="py-3 sm:py-4 px-2 text-white border-b-2 border-brand-purple transition-colors">Histórias</a>
+                <a href="curiosidades.html"
+                    class="py-3 sm:py-4 px-2 text-gray-400 hover:text-brand-purple-light border-b-2 border-transparent hover:border-brand-purple-light transition-colors">Curiosidades</a>
+            </div>
+        </nav>
+
+        <main class="space-y-12 sm:space-y-16">
+            <div class="text-center">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-brand-lavender">Pioneiras que Marcaram Época</h2>
+            </div>
+
+            <article class="bg-dark-800 p-6 sm:p-10 rounded-xl shadow-2xl border border-dark-700">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-10 items-start">
+                    
+                    <img src="https://www.rbsdirect.com.br/imagesrc/24830061.jpg?w=700"
+                        alt="Marta, a Rainha"
+                        class="w-full h-auto object-cover rounded-lg shadow-lg border-2 border-brand-purple flex-shrink-0">
+                    
+                    <div class="lg:col-span-2">
+                        <h3 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-brand-lavender mb-3">
+                            Marta: A Rainha do Futebol</h3>
+                        <p class="text-gray-300 leading-relaxed text-sm sm:text-base">
+                            Eleita seis vezes a melhor jogadora do mundo pela FIFA, Marta Vieira da Silva é mais do que uma atleta; é um símbolo de perseverança e talento. Nascida em Alagoas, superou inúmeros obstáculos e o preconceito para se tornar a maior artilheira da história das Copas do Mundo (entre homens e mulheres) e uma inspiração para milhões de meninas em todo o planeta.
+                        </p>
+                        <a href="#" class="mt-4 inline-block font-bold text-brand-purple hover:text-brand-purple-light transition-colors">Ver Trajetória Completa &rarr;</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="bg-dark-800 p-6 sm:p-10 rounded-xl shadow-2xl border border-dark-700">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-10 items-start">
+                    
+                    <div class="lg:col-span-2 order-2 lg:order-1 lg:text-right">
+                        <h3 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-brand-lavender mb-3">
+                            Sissi: A Imperatriz da Camisa 10</h3>
+                        <p class="text-gray-300 leading-relaxed text-sm sm:text-base">
+                            Sisleide do Amor Lima, a Sissi, foi a maestrina da seleção brasileira nos anos 90. Com uma canhota mágica e uma visão de jogo espetacular, ela encantou o mundo na Copa de 1999, onde foi artilheira e levou o Brasil a um histórico terceiro lugar. Sua luta por reconhecimento e melhores condições para as atletas abriu portas para as gerações futuras.
+                        </p>
+                        <a href="#" class="mt-4 inline-block font-bold text-brand-purple hover:text-brand-purple-light transition-colors">Ver Trajetória Completa &rarr;</a>
+                    </div>
+                    
+                    <img src="https://i1.wp.com/jogamiga.com.br/wp-content/uploads/2020/06/1999-scaled.jpg?fit=640%2C427&ssl=1"
+                        alt="Sissi"
+                        class="w-full h-auto object-cover rounded-lg shadow-lg border-2 border-brand-purple flex-shrink-0 order-1 lg:order-2">
+                </div>
+            </article>
+
+            </main>
+    </div>
+</body>
+</html>

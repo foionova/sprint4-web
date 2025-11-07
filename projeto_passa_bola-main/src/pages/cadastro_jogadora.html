@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Jogadora - Copa Passa a Bola</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+        body { font-family: 'Poppins', sans-serif; }
+
+        /* Estilo Customizado para o Range Input (Elemento Interativo) */
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #6D28D9; /* brand-purple */
+            cursor: pointer;
+            box-shadow: 0 0 0 4px rgba(109, 40, 217, 0.3);
+            transition: all 0.2s;
+        }
+        input[type="range"]::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #6D28D9;
+            cursor: pointer;
+            box-shadow: 0 0 0 4px rgba(109, 40, 217, 0.3);
+            transition: all 0.2s;
+            border: none;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            purple: '#6D28D9',
+                            'purple-light': '#8B5CF6',
+                            'purple-hover': '#5821b0',
+                            lavender: '#C4B5FD'
+                        },
+                        dark: {
+                            100: '#EAEAEA',
+                            600: '#2c2c2c',
+                            700: '#1f1f1f',
+                            800: '#1c1c1c',
+                            900: '#121212'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark-900 text-dark-100 min-h-screen">
+    
+    <header class="bg-dark-800/90 backdrop-blur-md sticky top-0 z-50 shadow-lg">
+        <nav
+            class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
+            <a href="copa.html" class="flex items-center gap-3 text-brand-purple">
+                <span class="text-xl font-bold">Copa Passa a Bola</span>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+                <a href="copa.html" class="hover:text-brand-purple-light transition-colors">Início</a>
+                <a href="times.html" class="hover:text-brand-purple-light transition-colors">Times</a>
+                <a href="cadastro_time.html" class="hover:text-brand-purple-light transition-colors">Cadastro Time</a>
+                <a href="cadastro_jogadora.html" class="text-brand-lavender font-bold border-b-2 border-brand-lavender pb-1">Cadastro Jogadora</a>
+                <a href="regras.html" class="hover:text-brand-purple-light transition-colors">Regras</a>
+                <a href="meu_time.html" class="hover:text-brand-purple-light transition-colors">Meu Time</a>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                 <button class="hover:text-brand-purple-light transition-colors md:hidden p-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+                <a href="perfil_copa.html" class="block w-8 h-8 rounded-full overflow-hidden border-2 border-brand-purple hover:border-brand-purple-light transition-colors">
+                    <img src="https://media.istockphoto.com/id/2222927647/pt/foto/serious-woman-or-soccer-player-in-portrait-for-sports-match-competition-or-tournament-locker.jpg?s=612x612&w=0&k=20&c=pQnpQFRilcs4_H3av37LD5KpOon-YqzFx9cUXn53qaY=" alt="Foto do perfil"
+                        class="w-full h-full object-cover">
+                </a>
+            </div>
+        </nav>
+    </header>
+    
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="max-w-3xl mx-auto bg-dark-800 rounded-2xl shadow-2xl shadow-brand-purple/20 p-8 md:p-12 border border-dark-700">
+            
+            <h1 class="text-3xl sm:text-4xl font-extrabold mb-2 text-brand-lavender">Registro de Jogadora</h1>
+            <p class="text-gray-400 mb-8 text-base">Preencha seus dados para entrar na lista de atletas da Copa Passa a Bola.</p>
+            
+            <form action="#" class="space-y-6">
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <div>
+                        <label for="nome-completo" class="text-sm font-medium text-gray-300 block mb-1">Nome Completo <span class="text-red-500">*</span></label>
+                        <input type="text" id="nome-completo" required
+                            placeholder="Nome e Sobrenome"
+                            class="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-purple transition-colors">
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="text-sm font-medium text-gray-300 block mb-1">Email <span class="text-red-500">*</span></label>
+                        <input type="email" id="email" required
+                            placeholder="seu.email@exemplo.com"
+                            class="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-purple transition-colors">
+                    </div>
+                    
+                    <div>
+                        <label for="telefone" class="text-sm font-medium text-gray-300 block mb-1">Número de Telefone</label>
+                        <input type="tel" id="telefone"
+                            placeholder="(XX) XXXXX-XXXX"
+                            class="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-purple transition-colors">
+                    </div>
+                    
+                    <div>
+                        <label for="camiseta" class="text-sm font-medium text-gray-300 block mb-1">Número da Camiseta <span class="text-red-500">*</span></label>
+                        <input type="number" id="camiseta" required min="1" max="99"
+                            placeholder="Ex: 10"
+                            class="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-purple transition-colors">
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-dark-700">
+                    
+                    <div class="relative">
+                        <label for="posicao" class="text-sm font-medium text-gray-300 block mb-1">Posição Preferencial <span class="text-red-500">*</span></label>
+                        <select id="posicao" required
+                            class="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-purple appearance-none pr-10 transition-colors">
+                            <option value="">Insira a posição que prefere jogar</option>
+                            <option value="Goleira">Goleira</option>
+                            <option value="Defensora">Defensora</option>
+                            <option value="Meio-campista">Meio-campista</option>
+                            <option value="Atacante">Atacante</option>
+                        </select>
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400 mt-6">
+                            <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div>
+                         <label for="time-afiliado" class="text-sm font-medium text-gray-300 block mb-1">Time Afiliado (Opcional)</label>
+                        <input type="text" id="time-afiliado"
+                            placeholder="Time em que joga atualmente"
+                            class="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-purple transition-colors">
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <label for="experiencia" class="text-sm font-medium text-gray-300 block mb-3">Nível de Experiência (1=Iniciante, 5=Avançado)</label>
+                        <input type="range" id="experiencia" min="1" max="5" value="3"
+                            class="w-full h-2 bg-dark-600 rounded-lg appearance-none cursor-pointer">
+                    </div>
+                </div>
+
+                <div class="pt-4 border-t border-dark-700">
+                    <div class="flex items-center gap-2 mb-6">
+                        <input type="checkbox" id="jogadora-livre"
+                            class="h-4 w-4 bg-dark-700 border-dark-600 text-brand-purple focus:ring-brand-purple rounded cursor-pointer">
+                        <label for="jogadora-livre" class="text-sm select-none">Registrar como **jogadora livre** (disponível para times).</label>
+                    </div>
+                    
+                    <button type="submit"
+                        class="w-full py-3 bg-brand-purple text-white font-bold rounded-xl hover:bg-brand-purple-hover transition-colors shadow-lg">Registrar Jogadora</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    
+    <footer class="bg-dark-800 mt-16 border-t border-dark-700 shadow-md">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div
+                class="flex flex-col sm:flex-row justify-between items-center gap-6">
+                <div class="text-center sm:text-left"><a
+                        class="flex items-center justify-center sm:justify-start gap-3 text-brand-purple"><img
+                            class="w-8 h-8"><span
+                            class="text-xl font-bold">Passa a Bola</span></a>
+                </div>
+                <div class="text-center text-sm text-gray-500">
+                    <p>&copy; 2025 Passa a Bola. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário - Passa a Bola</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+        body { font-family: 'Poppins', sans-serif; }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            purple: '#6D28D9',
+                            'purple-light': '#8B5CF6',
+                            'purple-hover': '#5821b0'
+                        },
+                        dark: {
+                            'bg': '#121212',
+                            'card': '#1c1c1c',
+                            'border': '#2c2c2c',
+                            'text-primary': '#ffffff',
+                            'text-secondary': '#a0a0a0'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark-bg text-dark-text-primary min-h-screen">
+    
+    <header class="bg-dark-card border-b border-dark-border shadow-md">
+        <nav
+            class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
+            <a href="../../index.html" class="text-2xl font-bold text-brand-purple hover:text-brand-purple-light transition-colors">Passa a Bola</a>
+            <div class="flex items-center gap-6 text-sm font-bold">
+                <a href="peneiras.html"
+                    class="text-dark-text-secondary hover:text-white transition-colors">Peneiras</a>
+                <a href="calendario.html" class="text-white border-b-2 border-brand-purple pb-1">Calendário</a>
+            </div>
+        </nav>
+    </header>
+    
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <h1 class="text-4xl sm:text-5xl font-extrabold mb-8 text-center text-brand-purple">Calendário Oficial</h1>
+
+        <div class="bg-dark-card rounded-xl shadow-2xl border border-dark-border">
+            
+            <div class="flex items-center justify-between p-4 border-b border-dark-border">
+                <div class="flex items-center gap-4">
+                    <button
+                        class="p-2 rounded-full text-brand-purple hover:bg-dark-border transition-colors shadow-md"
+                        aria-label="Mês anterior">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                    </button>
+                    <h2 class="text-2xl font-bold text-white whitespace-nowrap">Setembro 2025</h2>
+                    <button
+                        class="p-2 rounded-full text-brand-purple hover:bg-dark-border transition-colors shadow-md"
+                        aria-label="Próximo mês">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </div>
+                <button
+                    class="border border-brand-purple text-sm font-semibold py-2 px-4 rounded-full text-brand-purple hover:bg-brand-purple hover:text-white transition-colors shadow-md">Hoje</button>
+            </div>
+            
+            <div class="hidden lg:block">
+                <div
+                    class="grid grid-cols-7 text-center text-sm text-dark-text-secondary font-semibold border-b border-dark-border">
+                    <div class="py-3">DOM</div>
+                    <div class="py-3">SEG</div>
+                    <div class="py-3">TER</div>
+                    <div class="py-3">QUA</div>
+                    <div class="py-3">QUI</div>
+                    <div class="py-3">SEX</div>
+                    <div class="py-3">SAB</div>
+                </div>
+                <div class="grid grid-cols-7 h-[600px] divide-x divide-dark-border border-b border-dark-border">
+                    <div class="border-b border-dark-border p-2 text-dark-text-secondary opacity-50">31</div>
+                    <div class="border-b border-dark-border p-2">1</div>
+                    <div class="border-b border-dark-border p-2">2</div>
+                    
+                    <div class="border-b border-dark-border p-2">3 
+                        <div class="bg-brand-purple/20 text-brand-purple text-xs p-1 rounded-md mt-1 truncate cursor-pointer hover:opacity-80 transition-opacity" title="Peneira Aberta">
+                            Peneira Aberta
+                        </div>
+                    </div>
+                    
+                    <div class="border-b border-dark-border p-2">4</div>
+                    <div class="border-b border-dark-border p-2">5</div>
+                    <div class="border-b border-dark-border p-2">6</div>
+                    <div class="border-b border-dark-border p-2">7</div>
+                    <div class="border-b border-dark-border p-2">8</div>
+                    <div class="border-b border-dark-border p-2">9</div>
+                    <div class="border-b border-dark-border p-2">10</div>
+                    <div class="border-b border-dark-border p-2">11</div>
+                    
+                    <div class="border-b border-dark-border p-2 bg-brand-purple/10 border-l-4 border-brand-purple">
+                        12 
+                        <div class="bg-brand-purple text-white text-xs p-1 rounded-md mt-1 truncate cursor-pointer hover:opacity-80 transition-opacity" title="Avaliação Sub-20">
+                            Avaliação Sub-20
+                        </div>
+                    </div>
+                    
+                    <div class="border-b border-dark-border p-2">13</div>
+                    <div class="border-b border-dark-border p-2 font-bold text-brand-purple-light border-2 border-brand-purple-light/50 rounded-md">14</div>
+                    
+                    <div class="border-b border-dark-border p-2">15
+                        <div class="bg-green-500 text-white text-xs p-1 rounded-md mt-1 truncate cursor-pointer hover:opacity-80 transition-opacity" title="Final do Campeonato">
+                            Final do Campeonato
+                        </div>
+                    </div>
+                    
+                    <div class="border-b border-dark-border p-2">16</div>
+                    <div class="border-b border-dark-border p-2">17</div>
+                    <div class="border-b border-dark-border p-2">18</div>
+                    <div class="border-b border-dark-border p-2">19</div>
+                    <div class="border-b border-dark-border p-2">20</div>
+                    <div class="border-b border-dark-border p-2">21</div>
+                    <div class="border-b border-dark-border p-2">22</div>
+                    <div class="border-b border-dark-border p-2">23</div>
+                    <div class="border-b border-dark-border p-2">24</div>
+                    <div class="border-b border-dark-border p-2">25</div>
+                    <div class="border-b border-dark-border p-2">26</div>
+                    <div class="border-b border-dark-border p-2">27</div>
+                    <div class="border-b border-dark-border p-2">28</div>
+                    <div class="p-2">29</div>
+                    <div class="p-2">30</div>
+                    <div class="p-2 text-dark-text-secondary opacity-50">1</div>
+                    <div class="p-2 text-dark-text-secondary opacity-50">2</div>
+                    <div class="p-2 text-dark-text-secondary opacity-50">3</div>
+                    <div class="p-2 text-dark-text-secondary opacity-50">4</div>
+                    
+                </div>
+            </div>
+            
+            <div class="lg:hidden p-4">
+                <h3 class="text-xl font-bold mb-4 border-b border-dark-border pb-2 text-brand-purple">Eventos em Destaque</h3>
+                <div class="space-y-4">
+                    
+                    <a href="#" class="flex items-center gap-4 bg-dark-border p-3 rounded-lg hover:bg-dark-700 transition-colors shadow-md">
+                        <div class="text-center w-12 flex-shrink-0">
+                            <p class="text-xs text-dark-text-secondary">QUA</p>
+                            <p class="text-xl font-bold">3</p>
+                        </div>
+                        <div class="flex-1 bg-brand-purple/20 text-brand-purple p-3 rounded-lg font-semibold">Peneira Aberta</div>
+                    </a>
+                    
+                    <a href="#" class="flex items-center gap-4 bg-dark-border p-3 rounded-lg hover:bg-dark-700 transition-colors shadow-md border-l-4 border-brand-purple">
+                        <div class="text-center w-12 flex-shrink-0">
+                            <p class="text-xs text-dark-text-secondary">SEX</p>
+                            <p class="text-xl font-bold">12</p>
+                        </div>
+                        <div class="flex-1 bg-brand-purple text-white p-3 rounded-lg font-semibold">Avaliação Sub-20</div>
+                    </a>
+                    
+                    <div class="flex items-center gap-4 p-3 rounded-lg bg-dark-700 shadow-md">
+                        <div class="text-center w-12 flex-shrink-0 border-r border-dark-600 pr-4">
+                            <p class="text-xs text-brand-purple">HOJE</p>
+                            <p class="text-2xl font-bold text-brand-purple">14</p>
+                        </div>
+                        <div class="flex-1 text-gray-400 font-medium">Nenhum evento agendado.</div>
+                    </div>
+                    
+                    <a href="#" class="flex items-center gap-4 bg-dark-border p-3 rounded-lg hover:bg-dark-700 transition-colors shadow-md">
+                        <div class="text-center w-12 flex-shrink-0">
+                            <p class="text-xs text-dark-text-secondary">SEG</p>
+                            <p class="text-xl font-bold">15</p>
+                        </div>
+                        <div class="flex-1 bg-green-500 text-white p-3 rounded-lg font-semibold">Final do Campeonato</div>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="bg-dark-card mt-16 border-t border-dark-border shadow-md">
+        <div
+            class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-dark-text-secondary text-sm">
+            <p>&copy; 2025 Passa a Bola. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

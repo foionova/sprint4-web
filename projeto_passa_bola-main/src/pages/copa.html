@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copa Passa a Bola</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+        body { font-family: 'Poppins', sans-serif; }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            purple: '#6D28D9',
+                            'purple-light': '#8B5CF6',
+                            'purple-hover': '#5821b0' // Adicionado hover
+                        },
+                        dark: {
+                            100: '#EAEAEA',
+                            500: '#3a3a3a',
+                            600: '#2c2c2c',
+                            700: '#1f1f1f',
+                            800: '#1c1c1c',
+                            900: '#121212'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark-900 text-dark-100 min-h-screen">
+
+<header class="bg-dark-800/90 backdrop-blur-md sticky top-0 z-50 shadow-lg">
+    <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
+        <a href="../../index.html" class="flex items-center gap-3 text-brand-purple">
+            <span class="text-xl font-bold">Copa Passa a Bola</span>
+        </a>
+        
+        <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+            <a href="copa.html" class="text-white border-b-2 border-brand-purple pb-1">Início</a>
+            <a href="times.html" class="hover:text-brand-purple-light transition-colors">Times</a>
+            <a href="cadastro_time.html" class="hover:text-brand-purple-light transition-colors whitespace-nowrap">Cadastro Time</a>
+            <a href="cadastro_jogadora.html" class="hover:text-brand-purple-light transition-colors whitespace-nowrap">Cadastro Jogadora</a>
+            <a href="regras.html" class="hover:text-brand-purple-light transition-colors">Regras</a>
+            <a href="meu_time.html" class="hover:text-brand-purple-light transition-colors whitespace-nowrap">Meu Time</a>
+        </div>
+        
+        <div class="flex items-center gap-4">
+            <button class="hover:text-brand-purple-light transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+            </button>
+            <a href="perfil_copa.html" class="block w-8 h-8 rounded-full overflow-hidden border-2 border-brand-purple hover:border-brand-purple-light transition-colors">
+                <img src="https://media.istockphoto.com/id/2222927647/pt/foto/serious-woman-or-soccer-player-in-portrait-for-sports-match-competition-or-tournament-locker.jpg?s=612x612&w=0&k=20&c=pQnpQFRilcs4_H3av37LD5KpOon-YqzFx9cUXn53qaY=" alt="Foto do perfil" class="w-full h-full object-cover">
+            </a>
+            <button id="menu-button" class="md:hidden hover:text-brand-purple-light transition-colors p-1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<main class="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    
+    <section class="mb-12 rounded-xl shadow-2xl overflow-hidden border-4 border-dark-800">
+        <img src="https://media.istockphoto.com/id/1414152556/pt/foto/athletic-women-playing-soccer-on-sports-training-at-the-stadium.jpg?s=612x612&w=0&k=20&c=Rwci4Ms2np5wO5iq-P0rNLdwDyEpsocVbEH1gJsNy1w=" alt="Campeãs da Copa Passa a Bola" class="w-full h-auto object-cover aspect-[16/6]">
+    </section>
+
+    <section class="mb-12">
+        <h2 class="text-3xl font-extrabold mb-6 text-brand-purple border-b border-dark-700 pb-2">Próximas Partidas</h2>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <a href="partidas.html" class="group bg-dark-800 p-6 rounded-xl shadow-lg border-t-4 border-brand-purple hover:bg-dark-700 transition-all duration-300">
+                <p class="text-lg font-bold group-hover:text-brand-purple-light transition-colors">Team A vs. Team B</p>
+                <p class="text-sm text-gray-400 mt-1">🗓️ Sexta, 20 Setembro, 19:00</p>
+                <p class="text-xs text-gray-500 mt-2">📍 Estádio Central</p>
+            </a>
+            
+            <a href="partidas.html" class="group bg-dark-800 p-6 rounded-xl shadow-lg border-t-4 border-brand-purple/70 hover:bg-dark-700 transition-all duration-300">
+                <p class="text-lg font-bold group-hover:text-brand-purple-light transition-colors">Team C vs. Team D</p>
+                <p class="text-sm text-gray-400 mt-1">🗓️ Sábado, 21 Setembro, 15:00</p>
+                <p class="text-xs text-gray-500 mt-2">📍 Arena Secundária</p>
+            </a>
+            
+            <a href="partidas.html" class="group bg-dark-800 p-6 rounded-xl shadow-lg border-t-4 border-brand-purple/50 hover:bg-dark-700 transition-all duration-300">
+                <p class="text-lg font-bold group-hover:text-brand-purple-light transition-colors">Team E vs. Team F</p>
+                <p class="text-sm text-gray-400 mt-1">🗓️ Sábado, 21 Setembro, 17:00</p>
+                <p class="text-xs text-gray-500 mt-2">📍 Centro de Treinamento</p>
+            </a>
+            
+        </div>
+        <div class="text-center mt-8">
+            <a href="partidas.html" class="inline-block bg-dark-700 hover:bg-dark-600 text-white font-semibold py-2 px-6 rounded-full transition-colors shadow-md">Ver Calendário Completo</a>
+        </div>
+    </section>
+
+    <section class="mb-12">
+        <h2 class="text-3xl font-extrabold mb-6 text-brand-purple border-b border-dark-700 pb-2">Notícias Rápidas</h2>
+        <div class="space-y-6">
+            
+            <a href="noticias.html" class="block group bg-dark-800 p-4 rounded-xl shadow-lg hover:shadow-brand-purple/20 transition-all duration-300">
+                <div class="flex flex-col md:flex-row gap-6 items-start">
+                    <img src="https://media.istockphoto.com/id/1637717318/pt/foto/female-football-player-kicking-ball.jpg?s=612x612&w=0&k=20&c=UCPE3PQ1wzDP86mYZAPYIcafuQTs56sUJjcE9_lbW0Q=" alt="Seleção Brasileira comemorando" class="w-full md:w-40 h-32 object-cover rounded-lg flex-shrink-0">
+                    <div class="flex-1">
+                        <span class="text-xs font-bold text-gray-400">NOTÍCIA EM DESTAQUE</span>
+                        <h3 class="text-xl font-bold mt-1 group-hover:text-brand-purple-light transition-colors">Seleção Sub-20 estreia com vitória no Sul-Americano</h3>
+                        <p class="text-gray-300 mt-2 text-sm line-clamp-2">A equipe brasileira feminina Sub-20 venceu o Uruguai por 2 a 0 na estreia do Campeonato Sul-Americano. Os gols da partida, disputada no Estádio Modelo, em Guayaquil, foram marcados por Ana Flávia e Gisele, ambos logo na primeira rodada.</p>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="noticias.html" class="block group bg-dark-800 p-4 rounded-xl shadow-lg hover:shadow-brand-purple/20 transition-all duration-300">
+                <div class="flex flex-col md:flex-row gap-6 items-start">
+                    <img src="https://images.unsplash.com/photo-1535505594935-9e0429733aff?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTYwfHxmdXRlYm9sJTIwZmVtaW5pbm98ZW58MHx8MHx8fDA%3D" alt="Estádio de futebol" class="w-full md:w-40 h-32 object-cover rounded-lg flex-shrink-0">
+                    <div class="flex-1">
+                        <span class="text-xs font-bold text-gray-400">RECORDE DE PÚBLICO</span>
+                        <h3 class="text-xl font-bold mt-1 group-hover:text-brand-purple-light transition-colors">Público recorde na final do Brasileirão Feminino</h3>
+                        <p class="text-gray-300 mt-2 text-sm line-clamp-2">Mais de 40 mil torcedores lotaram o estádio na final entre Corinthians e Ferroviária, quebrando o recorde de público do futebol feminino nacional. A partida terminou em 1 a 1, com o título decidido nos pênaltis.</p>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="noticias.html" class="block group bg-dark-800 p-4 rounded-xl shadow-lg hover:shadow-brand-purple/20 transition-all duration-300">
+                <div class="flex flex-col md:flex-row gap-6 items-start">
+                    <img src="https://media.istockphoto.com/id/1468592839/pt/foto/female-soccer-player-looking-away-contemplating-in-the-field.jpg?s=612x612&w=0&k=20&c=PvcxheDdO54x1fmVBz8TLqDU8_PYhGK7oK2DvKmWl9U=" alt="Jogadoras tirando selfie" class="w-full md:w-40 h-32 object-cover rounded-lg flex-shrink-0">
+                    <div class="flex-1">
+                        <span class="text-xs font-bold text-gray-400">TECNOLOGIA</span>
+                        <h3 class="text-xl font-bold mt-1 group-hover:text-brand-purple-light transition-colors">Nova plataforma conecta jogadoras e clubes locais</h3>
+                        <p class="text-gray-300 mt-2 text-sm line-clamp-2">Uma nova iniciativa promete revolucionar a base do esporte ao conectar jogadoras amadoras a clubes e torneios em todo o Brasil. A proposta inclui perfis personalizados, sistema de inscrições e calendários unificados de "peneiras".</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="text-center mt-8">
+            <a href="noticias.html" class="inline-block bg-dark-700 hover:bg-dark-600 text-white font-semibold py-2 px-6 rounded-full transition-colors shadow-md">Ver mais notícias</a>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="text-3xl font-extrabold mb-6 text-brand-purple border-b border-dark-700 pb-2">Explorar a Copa</h2>
+        
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+            
+            <a href="partidas.html" class="group bg-dark-800 p-4 rounded-xl h-36 flex flex-col justify-end text-white shadow-lg border-l-4 border-brand-purple hover:shadow-brand-purple/20 transition-all duration-300">
+                <h4 class="font-bold text-xl group-hover:text-brand-purple-light transition-colors">Partidas</h4>
+                <p class="text-xs text-gray-400 mt-1">Veja as próximas partidas e resultados.</p>
+            </a>
+            
+            <a href="classificacao.html" class="group bg-dark-800 p-4 rounded-xl h-36 flex flex-col justify-end text-white shadow-lg border-l-4 border-brand-purple/80 hover:shadow-brand-purple/20 transition-all duration-300">
+                <h4 class="font-bold text-xl group-hover:text-brand-purple-light transition-colors">Classificação</h4>
+                <p class="text-xs text-gray-400 mt-1">Acompanhe a tabela atualizada.</p>
+            </a>
+            
+            <a href="times.html" class="group bg-dark-800 p-4 rounded-xl h-36 flex flex-col justify-end text-white shadow-lg border-l-4 border-brand-purple/60 hover:shadow-brand-purple/20 transition-all duration-300">
+                <h4 class="font-bold text-xl group-hover:text-brand-purple-light transition-colors">Times</h4>
+                <p class="text-xs text-gray-400 mt-1">Conheça as equipes participantes.</p>
+            </a>
+            
+            <a href="estatisticas.html" class="group bg-dark-800 p-4 rounded-xl h-36 flex flex-col justify-end text-white shadow-lg border-l-4 border-brand-purple/40 hover:shadow-brand-purple/20 transition-all duration-300">
+                <h4 class="font-bold text-xl group-hover:text-brand-purple-light transition-colors">Estatísticas</h4>
+                <p class="text-xs text-gray-400 mt-1">Artilharia, cartões, e mais.</p>
+            </a>
+            
+            <a href="regras.html" class="group bg-dark-800 p-4 rounded-xl h-36 flex flex-col justify-end text-white shadow-lg border-l-4 border-brand-purple/20 hover:shadow-brand-purple/20 transition-all duration-300">
+                <h4 class="font-bold text-xl group-hover:text-brand-purple-light transition-colors">Regras</h4>
+                <p class="text-xs text-gray-400 mt-1">Regulamento oficial da Copa.</p>
+            </a>
+
+            <a href="cadastro_time.html" class="group bg-dark-700 p-4 rounded-xl h-36 flex flex-col justify-end text-white shadow-lg border border-brand-purple hover:bg-dark-600 transition-all duration-300 lg:col-span-1">
+                <h4 class="font-bold text-xl group-hover:text-brand-purple-light transition-colors">Registrar Time</h4>
+                <p class="text-xs text-gray-400 mt-1">Inscreva sua equipe na próxima Copa.</p>
+            </a>
+            
+        </div>
+    </section>
+</main>
+
+<footer class="bg-dark-800 mt-16 border-t border-dark-700 shadow-md">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="flex flex-col sm:flex-row justify-between items-center gap-6">
+            <div class="text-center sm:text-left">
+                <span class="text-xl font-bold text-brand-purple">Passa a Bola</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="#" aria-label="Instagram" class="text-dark-100 hover:text-brand-purple-light transition-colors"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                <a href="#" aria-label="Twitter" class="text-dark-100 hover:text-brand-purple-light transition-colors"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
+                <a href="#" aria-label="TikTok" class="text-dark-100 hover:text-brand-purple-light transition-colors"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-2.43.05-4.85-.38-6.93-1.93-1.55-1.12-2.67-2.7-3.13-4.52-.38-1.5-.4-3.04-.4-4.55 0-3.51 0-7.02 0-10.53 0-2.36 1.01-4.54 2.76-5.94 1.71-1.39 3.8-2.06 5.91-2.02z" /></svg></a>
+            </div>
+        </div>
+        <div class="mt-6 text-center text-sm text-gray-500 border-t border-dark-700 pt-6">
+            <p>&copy; 2025 Passa a Bola. Todos os direitos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

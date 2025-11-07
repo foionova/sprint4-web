@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Passa a Bola</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            purple: '#8A2BE2',
+                            'purple-hover': '#7b24cb'
+                        },
+                        dark: {
+                            100: '#EAEAEA',
+                            500: '#3a3a3a',
+                            600: '#2c2c2c',
+                            700: '#1f1f1f',
+                            800: '#1c1c1c',
+                            900: '#121212'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark-900 text-dark-100">
+    <main class="flex items-center justify-center min-h-screen p-4 sm:p-6 lg:p-8">
+        
+        <div
+            class="w-full max-w-4xl flex flex-col md:flex-row bg-dark-800 rounded-3xl shadow-2xl shadow-brand-purple/20 overflow-hidden border border-dark-700">
+            
+            <div class="w-full md:w-1/2 hidden md:block">
+                <img src="https://images.unsplash.com/photo-1526842047491-3950c55e09b4?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODZ8fGZ1dGVib2wlMjBmZW1pbmlub3xlbnwwfHwwfHx8MA%3D%3D"
+                    alt="Jogadoras de futebol se abraçando"
+                    class="w-full h-full object-cover">
+            </div>
+
+            <div class="w-full md:w-1/2 p-8 md:p-12 lg:p-16">
+                
+                <a href="../../index.html" class="text-xl font-bold text-brand-purple hover:text-brand-purple-hover mb-4 block">Passa a Bola</a>
+                
+                <h2 class="text-3xl font-extrabold mb-2">Bem-vindo de volta!</h2>
+                <p class="text-gray-400 mb-8 text-sm">Acesse sua conta para continuar gerenciando sua jornada no futebol.</p>
+
+                <div class="flex mb-8 space-x-4 border-b border-dark-700 pb-2">
+                    <a href="entrar.html"
+                        class="px-5 py-2 bg-brand-purple text-white rounded-lg font-semibold shadow-md">Entrar</a>
+                    <a href="cadastrar.html"
+                        class="px-5 py-2 text-gray-400 hover:text-white transition-colors font-medium">Cadastrar</a>
+                </div>
+
+                <!-- FORM LOGIN -->
+                <form id="login-form" class="space-y-6">
+                    
+                    <div>
+                        <label for="email-login"
+                            class="text-sm font-medium text-gray-300 block mb-1">Endereço de e-mail</label>
+                        <input type="email" id="email-login" required
+                            class="mt-1 w-full p-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-purple focus:border-brand-purple transition-colors placeholder:text-dark-500"
+                            placeholder="seu.email@exemplo.com">
+                    </div>
+
+                    <div>
+                        <label for="senha-login"
+                            class="text-sm font-medium text-gray-300 block mb-1">Senha</label>
+                        <input type="password" id="senha-login" required
+                            class="mt-1 w-full p-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-purple focus:border-brand-purple transition-colors placeholder:text-dark-500"
+                            placeholder="••••••••">
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <input id="lembrar-me" name="lembrar-me" type="checkbox"
+                                class="h-4 w-4 bg-dark-700 border-dark-600 text-brand-purple focus:ring-brand-purple rounded cursor-pointer">
+                            <label for="lembrar-me"
+                                class="ml-2 block text-sm text-gray-300 select-none">Lembrar-me</label>
+                        </div>
+                        <div class="text-sm">
+                            <a href="#"
+                                class="font-medium text-brand-purple hover:text-brand-purple-hover transition-colors">Esqueceu a senha?</a>
+                        </div>
+                    </div>
+                    
+                    <button type="submit"
+                        class="w-full text-center px-5 py-3 bg-brand-purple text-white font-bold rounded-xl hover:bg-brand-purple-hover transition-colors shadow-lg">
+                        Entrar
+                    </button>
+
+                    <!-- feedback -->
+                    <p id="login-feedback" class="text-center text-sm pt-2"></p>
+
+                    <p class="text-center text-sm text-gray-400 pt-2">
+                        Não tem uma conta? 
+                        <a href="cadastrar.html" class="text-brand-purple font-semibold hover:underline transition-colors">Crie uma agora.</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- SCRIPT LOGIN -->
+    <script>
+        const loginForm = document.getElementById('login-form');
+        const feedback = document.getElementById('login-feedback');
+
+        loginForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            feedback.textContent = '';
+            feedback.className = 'text-center text-sm pt-2';
+
+            const email = document.getElementById('email-login').value.trim();
+            const senha = document.getElementById('senha-login').value;
+
+            if (!email || !senha) {
+                feedback.textContent = 'Preencha e-mail e senha.';
+                feedback.classList.add('text-red-400');
+                return;
+            }
+
+            try {
+                const response = await fetch('http://localhost:3000/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email, senha })
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.message || 'Credenciais inválidas.');
+                }
+
+                // salva o token e redireciona para a home/dashboard
+                localStorage.setItem('authToken', data.token);
+                feedback.textContent = 'Login realizado com sucesso! Redirecionando...';
+                feedback.classList.add('text-green-400');
+
+                setTimeout(() => {
+                    window.location.href = '../../index.html';
+                }, 800);
+            } catch (error) {
+                feedback.textContent = error.message || 'Erro ao fazer login.';
+                feedback.classList.add('text-red-400');
+            }
+        });
+    </script>
+</body>
+</html>

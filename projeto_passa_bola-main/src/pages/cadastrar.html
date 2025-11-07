@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Passa a Bola</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            purple: '#8A2BE2',
+                            'purple-hover': '#7b24cb'
+                        },
+                        dark: {
+                            100: '#EAEAEA',
+                            500: '#3a3a3a',
+                            600: '#2c2c2c',
+                            700: '#1f1f1f',
+                            800: '#1c1c1c',
+                            900: '#121212'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark-900 text-dark-100 min-h-screen">
+    <main class="flex items-center justify-center min-h-screen p-4 sm:p-6 lg:p-8">
+        
+        <div
+            class="w-full max-w-4xl flex flex-col md:flex-row bg-dark-800 rounded-3xl shadow-2xl shadow-brand-purple/20 overflow-hidden border border-dark-700">
+            
+            <div class="w-full md:w-1/2 hidden md:block">
+                <img src="https://images.unsplash.com/photo-1730816434944-9db48c7ff203?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTF8fGZ1dGVib2wlMjBmZW1pbmlub3xlbnwwfHwwfHx8MA%3D%3D"
+                    alt="Jogadoras de futebol em ação"
+                    class="w-full h-full object-cover">
+            </div>
+            
+            <div class="w-full md:w-1/2 p-8 md:p-12 lg:p-16">
+                
+                <a href="../../index.html" class="text-xl font-bold text-brand-purple hover:text-brand-purple-hover mb-4 block">Passa a Bola</a>
+                
+                <h2 class="text-3xl font-extrabold mb-2">Crie sua Conta!</h2>
+                <p class="text-gray-400 mb-8 text-sm">Junte-se à nossa comunidade e comece sua jornada no futebol feminino.</p>
+
+                <div class="flex mb-8 space-x-4 border-b border-dark-700 pb-2">
+                    <a href="entrar.html"
+                        class="px-5 py-2 text-gray-400 hover:text-white transition-colors font-medium">Entrar</a>
+                    <a href="cadastrar.html"
+                        class="px-5 py-2 bg-brand-purple text-white rounded-lg font-semibold shadow-md">Cadastrar</a>
+                </div>
+                
+                <!-- FORM CADASTRO -->
+                <form id="cadastro-form" class="space-y-6">
+                    
+                    <div>
+                        <label for="usuario" class="text-sm font-medium text-gray-300 block mb-1">Nome de Usuário <span class="text-red-500">*</span></label>
+                        <input type="text" id="usuario" required
+                            placeholder="Escolha um nome de usuário"
+                            class="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-purple focus:border-brand-purple transition-colors placeholder:text-dark-500">
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="text-sm font-medium text-gray-300 block mb-1">Endereço de E-mail <span class="text-red-500">*</span></label>
+                        <input type="email" id="email" required
+                            placeholder="seu.email@exemplo.com"
+                            class="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-purple focus:border-brand-purple transition-colors placeholder:text-dark-500">
+                    </div>
+
+                    <div>
+                        <label for="endereco" class="text-sm font-medium text-gray-300 block mb-1">Endereço (Cidade/Estado)</label>
+                        <input type="text" id="endereco"
+                            placeholder="Ex: São Paulo, SP"
+                            class="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-purple focus:border-brand-purple transition-colors placeholder:text-dark-500">
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                        
+                        <div>
+                            <label for="telefone" class="text-sm font-medium text-gray-300 block mb-1">Telefone</label>
+                            <input type="tel" id="telefone"
+                                placeholder="(XX) XXXXX-XXXX"
+                                class="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-purple focus:border-brand-purple transition-colors placeholder:text-dark-500">
+                        </div>
+                        
+                        <div>
+                            <label for="senha-cadastro" class="text-sm font-medium text-gray-300 block mb-1">Senha <span class="text-red-500">*</span></label>
+                            <input type="password" id="senha-cadastro" required
+                                placeholder="Crie uma senha forte"
+                                class="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-purple focus:border-brand-purple transition-colors placeholder:text-dark-500">
+                        </div>
+                    </div>
+                    
+                    <div class="pt-4">
+                        <button type="submit"
+                            class="w-full text-center px-5 py-3 bg-brand-purple text-white font-bold rounded-xl hover:bg-brand-purple-hover transition-colors shadow-lg">
+                            Cadastrar
+                        </button>
+                    </div>
+
+                    <!-- feedback -->
+                    <p id="cadastro-feedback" class="text-center text-sm pt-2"></p>
+
+                    <p class="text-center text-sm text-gray-400 pt-2">
+                        Já tem uma conta? 
+                        <a href="entrar.html" class="text-brand-purple font-semibold hover:underline transition-colors">Faça login.</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- SCRIPT CADASTRO -->
+    <script>
+        const cadastroForm = document.getElementById('cadastro-form');
+        const cadastroFeedback = document.getElementById('cadastro-feedback');
+
+        cadastroForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            cadastroFeedback.textContent = '';
+            cadastroFeedback.className = 'text-center text-sm pt-2';
+
+            const nome = document.getElementById('usuario').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const endereco = document.getElementById('endereco').value.trim();
+            const telefone = document.getElementById('telefone').value.trim();
+            const senha = document.getElementById('senha-cadastro').value;
+
+            if (!nome || !email || !senha) {
+                cadastroFeedback.textContent = 'Preencha pelo menos nome, e-mail e senha.';
+                cadastroFeedback.classList.add('text-red-400');
+                return;
+            }
+
+            try {
+                const response = await fetch('http://localhost:3000/cadastro', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        nome,
+                        email,
+                        senha,
+                        endereco,
+                        telefone
+                    })
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.message || 'Erro no cadastro.');
+                }
+
+                cadastroFeedback.textContent = data.mensagem || 'Cadastro realizado com sucesso!';
+                cadastroFeedback.classList.add('text-green-400');
+
+                // após sucesso, redireciona para login
+                setTimeout(() => {
+                    window.location.href = 'entrar.html';
+                }, 1000);
+            } catch (error) {
+                cadastroFeedback.textContent = error.message || 'Erro ao cadastrar.';
+                cadastroFeedback.classList.add('text-red-400');
+            }
+        });
+    </script>
+</body>
+</html>

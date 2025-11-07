@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícias - Mundo do Futebol Feminino</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+        body { font-family: 'Poppins', sans-serif; }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            purple: '#6D28D9',
+                            'purple-light': '#8B5CF6',
+                            'purple-hover': '#5821b0', // Adicionado hover
+                            lavender: '#C4B5FD'
+                        },
+                        dark: {
+                            100: '#EAEAEA',
+                            300: '#B2B2B2',
+                            600: '#2c2c2c',
+                            700: '#1f1f1f',
+                            800: '#1c1c1c',
+                            900: '#121212'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark-900 text-dark-100 min-h-screen">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <a href="../../index.html"
+            class="inline-flex items-center gap-2 text-gray-400 hover:text-brand-purple mb-8 transition-colors text-sm font-medium">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+            </svg>
+            <span>Voltar para a página inicial</span>
+        </a>
+        
+        <header class="text-center my-8">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-brand-lavender">Mundo do Futebol Feminino</h1>
+            <p class="text-gray-400 mt-2 text-lg">As últimas notícias, histórias e curiosidades do esporte.</p>
+        </header>
+        
+        <nav class="border-b border-dark-700 mb-12">
+            <div class="flex justify-center space-x-4 sm:space-x-8 text-lg font-semibold">
+                <a href="noticias.html"
+                    class="py-4 px-2 text-white border-b-2 border-brand-purple transition-colors">Notícias
+                    Recentes</a>
+                <a href="historias.html"
+                    class="py-4 px-2 text-gray-400 hover:text-brand-purple-light border-b-2 border-transparent hover:border-brand-purple-light transition-colors">Histórias</a>
+                <a href="curiosidades.html"
+                    class="py-4 px-2 text-gray-400 hover:text-brand-purple-light border-b-2 border-transparent hover:border-brand-purple-light transition-colors">Curiosidades</a>
+            </div>
+        </nav>
+        
+        <main class="space-y-12">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center bg-dark-800 p-6 rounded-xl shadow-2xl border border-dark-700">
+                <img src="https://img.olympics.com/images/image/private/t_s_pog_staticContent_hero_xl_2x/f_auto/primary/r50ehaluhaeoct5yexqz"
+                    alt="Seleção Brasileira comemorando"
+                    class="w-full h-auto object-cover rounded-lg shadow-xl aspect-video lg:aspect-square">
+                <div>
+                    <span
+                        class="text-sm font-bold text-brand-purple uppercase tracking-widest">Destaque do Dia</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 leading-snug hover:text-brand-purple-light transition-colors">Público recorde na final do Brasileirão Feminino</h2>
+                    <p class="text-gray-300 mt-4 text-base">Mais de 40 mil torcedores
+                        lotaram o estádio na final entre Corinthians e
+                        Ferroviária, quebrando o recorde de público do futebol
+                        feminino nacional. A partida terminou em 1 a 1, com o
+                        título decidido nos pênaltis.</p>
+                    <a href="#"
+                        class="mt-6 inline-flex items-center gap-2 font-bold text-brand-purple-light hover:text-white transition-colors">Ler
+                        matéria completa 
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <a href="#" class="group bg-dark-800 p-6 rounded-xl shadow-lg border border-dark-700 hover:border-brand-purple transition-all duration-300">
+                    <h3 class="font-bold text-xl leading-snug group-hover:text-brand-purple-light transition-colors">Seleção Sub-20 estreia com vitória</h3>
+                    <p class="text-sm text-gray-400 mt-3">A equipe brasileira
+                        feminina Sub-20 venceu o Uruguai por 2 a 0 na estreia do
+                        Campeonato Sul-Americano...</p>
+                    <span
+                        class="mt-4 inline-block text-sm font-semibold text-brand-purple hover:underline transition-colors">Continuar lendo &rarr;</span>
+                </a>
+                
+                <a href="#" class="group bg-dark-800 p-6 rounded-xl shadow-lg border border-dark-700 hover:border-brand-purple transition-all duration-300">
+                    <h3 class="font-bold text-xl leading-snug group-hover:text-brand-purple-light transition-colors">Nova plataforma conecta jogadoras e clubes</h3>
+                    <p class="text-sm text-gray-400 mt-3">Iniciativa promete
+                        revolucionar a base do esporte ao conectar jogadoras
+                        amadoras a clubes e torneios...</p>
+                    <span
+                        class="mt-4 inline-block text-sm font-semibold text-brand-purple hover:underline transition-colors">Continuar lendo &rarr;</span>
+                </a>
+                
+                <a href="#" class="group bg-dark-800 p-6 rounded-xl shadow-lg border border-dark-700 hover:border-brand-purple transition-all duration-300">
+                    <h3 class="font-bold text-xl leading-snug group-hover:text-brand-purple-light transition-colors">Marta é indicada mais uma vez à Bola de Ouro</h3>
+                    <p class="text-sm text-gray-400 mt-3">A rainha do futebol
+                        está entre as finalistas para o prêmio de melhor
+                        jogadora do mundo pela 15ª vez...</p>
+                    <span
+                        class="mt-4 inline-block text-sm font-semibold text-brand-purple hover:underline transition-colors">Continuar lendo &rarr;</span>
+                </a>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

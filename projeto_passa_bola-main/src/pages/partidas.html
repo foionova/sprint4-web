@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partidas - Copa Passa a Bola</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+        body { font-family: 'Poppins', sans-serif; }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            purple: '#6D28D9',
+                            'purple-hover': '#5821b0' // Adicionado hover
+                        },
+                        dark: {
+                            100: '#EAEAEA',
+                            600: '#2c2c2c',
+                            700: '#1f1f1f',
+                            800: '#1c1c1c',
+                            900: '#121212'
+                        },
+                        status: { // Cores para resultados e status
+                            win: '#34D399',     // Verde (Vitória)
+                            loss: '#F87171',    // Vermelho (Derrota)
+                            draw: '#FBBF24',    // Amarelo (Empate/Próximo)
+                            played: '#A78BFA'   // Roxo suave (Já jogado)
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark-900 text-dark-100 min-h-screen">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <a href="times.html"
+            class="inline-flex items-center gap-2 text-gray-400 hover:text-brand-purple mb-8 transition-colors text-sm font-medium">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+            </svg>
+            <span>Voltar para Times</span>
+        </a>
+        
+        <header class="mb-8">
+            <h1 class="text-4xl sm:text-5xl font-extrabold">Partidas</h1>
+            <p class="text-gray-400 mt-1">Resultados e Próximos Jogos da Copa Passa a Bola</p>
+        </header>
+        
+        <div class="flex gap-4 mb-10">
+            <button class="flex items-center gap-1 bg-dark-800 p-2 px-4 rounded-lg text-sm font-semibold border border-dark-700 hover:bg-dark-700 transition-colors shadow-md">
+                Grupo <span class="text-gray-400">A</span> 
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+            </button>
+            <button class="flex items-center gap-1 bg-dark-800 p-2 px-4 rounded-lg text-sm font-semibold border border-dark-700 hover:bg-dark-700 transition-colors shadow-md">
+                Time <span class="text-gray-400">Todos</span> 
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+            </button>
+        </div>
+        
+        <div class="space-y-10">
+            
+            <div>
+                <h2 class="font-bold text-xl mb-4 text-brand-purple border-b border-dark-700 pb-2">Hoje: Encerradas</h2>
+                <div class="space-y-4">
+                    
+                    <div class="bg-dark-800 rounded-xl p-4 flex justify-between items-center transition-shadow hover:shadow-brand-purple/20 shadow-lg border-l-4 border-status-win">
+                        <div class="flex items-center gap-3">
+                            <div class="p-2 bg-status-played/20 text-status-played rounded-md text-xl">✅</div>
+                            <div>
+                                <p class="font-semibold">Time A vs Time B</p>
+                                <p class="text-xs text-gray-400">10:00 AM | Finalizado</p>
+                            </div>
+                        </div>
+                        <p class="font-bold text-lg text-status-win">2-1</p>
+                    </div>
+                    
+                    <div class="bg-dark-800 rounded-xl p-4 flex justify-between items-center transition-shadow hover:shadow-brand-purple/20 shadow-lg border-l-4 border-status-win">
+                        <div class="flex items-center gap-3">
+                            <div class="p-2 bg-status-played/20 text-status-played rounded-md text-xl">✅</div>
+                            <div>
+                                <p class="font-semibold">Time C vs Time D</p>
+                                <p class="text-xs text-gray-400">01:00 PM | Finalizado</p>
+                            </div>
+                        </div>
+                        <p class="font-bold text-lg text-status-win">1-0</p>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div>
+                <h2 class="font-bold text-xl mb-4 text-brand-purple border-b border-dark-700 pb-2">Amanhã: Próximos Jogos</h2>
+                <div class="space-y-4">
+                    
+                    <div class="bg-dark-800 rounded-xl p-4 flex justify-between items-center transition-shadow hover:shadow-brand-purple/20 shadow-lg border-l-4 border-status-draw">
+                        <div class="flex items-center gap-3">
+                            <div class="p-2 bg-status-draw/20 text-status-draw rounded-md text-xl">🏟️</div>
+                            <div>
+                                <p class="font-semibold">Time E vs Time F</p>
+                                <p class="text-xs text-gray-400">02:00 PM | Estádio: Arena Fut</p>
+                            </div>
+                        </div>
+                        <p class="font-bold text-lg text-status-draw">Agendado</p>
+                    </div>
+                    
+                    <div class="bg-dark-800 rounded-xl p-4 flex justify-between items-center transition-shadow hover:shadow-brand-purple/20 shadow-lg border-l-4 border-status-draw">
+                        <div class="flex items-center gap-3">
+                            <div class="p-2 bg-status-draw/20 text-status-draw rounded-md text-xl">🏟️</div>
+                            <div>
+                                <p class="font-semibold">Time G vs Time H</p>
+                                <p class="text-xs text-gray-400">03:00 PM | Estádio: Municipal</p>
+                            </div>
+                        </div>
+                        <p class="font-bold text-lg text-status-draw">Agendado</p>
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

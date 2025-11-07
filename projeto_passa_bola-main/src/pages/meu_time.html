@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Time - Copa Passa a Bola</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+        body { font-family: 'Poppins', sans-serif; }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            purple: '#6D28D9',
+                            'purple-hover': '#5821b0' // Adicionado hover
+                        },
+                        dark: {
+                            100: '#EAEAEA',
+                            300: '#B2B2B2',
+                            600: '#2c2c2c',
+                            700: '#1f1f1f',
+                            800: '#1c1c1c',
+                            900: '#121212'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark-900 text-dark-100 min-h-screen">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <a href="copa.html"
+            class="inline-flex items-center gap-2 text-gray-400 hover:text-brand-purple mb-8 transition-colors font-medium">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+            </svg>
+            <span>Copa Passa a Bola</span>
+        </a>
+        
+        <div class="flex flex-col lg:flex-row gap-10">
+            
+            <aside class="w-full lg:w-1/4 flex-shrink-0">
+                <div class="flex flex-col items-center text-center bg-dark-800 p-6 rounded-xl shadow-xl border border-dark-700">
+                    <div
+                        class="w-24 h-24 bg-dark-700 rounded-xl flex items-center justify-center mb-4 p-2 shadow-lg">
+                        <img src="https://escudosfc.com.br/images/gas_rr.png"
+                            alt="Logo FC Vitoria Regia" class="w-full h-full object-contain">
+                    </div>
+                    <h2 class="text-3xl font-extrabold text-brand-purple">Team Phoenix</h2>
+                    <p class="text-sm text-gray-400">Grupo B</p>
+                    <p class="text-xs text-gray-500 mt-1">Fundado em 2018</p>
+                </div>
+                
+                <div class="mt-8 bg-dark-800 p-6 rounded-xl shadow-xl border border-dark-700">
+                    <h3 class="font-bold text-xl mb-4 border-b border-dark-700 pb-2 text-white">Próximas Partidas</h3>
+                    <div class="space-y-4">
+                        
+                        <div class="flex items-center gap-3 text-sm p-2 bg-dark-700 rounded-lg hover:bg-dark-700/50 transition-colors">
+                            <div class="p-2 bg-brand-purple/20 text-brand-purple rounded-md text-xl">⚽</div>
+                            <div>
+                                <p class="font-medium">Julho 15, 2025</p>
+                                <p class="text-xs text-gray-400">vs. FC Guerreiras da Bola</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-3 text-sm p-2 bg-dark-700 rounded-lg hover:bg-dark-700/50 transition-colors">
+                            <div class="p-2 bg-brand-purple/20 text-brand-purple rounded-md text-xl">⚽</div>
+                            <div>
+                                <p class="font-medium">Julho 22, 2025</p>
+                                <p class="text-xs text-gray-400">vs. FC Uniao das Forcas</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-3 text-sm p-2 bg-dark-700 rounded-lg hover:bg-dark-700/50 transition-colors">
+                            <div class="p-2 bg-brand-purple/20 text-brand-purple rounded-md text-xl">⚽</div>
+                            <div>
+                                <p class="font-medium">Julho 29, 2025</p>
+                                <p class="text-xs text-gray-400">vs. FC Esperanca Viva</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </aside>
+            
+            <main class="flex-1">
+                <h1 class="text-4xl sm:text-5xl font-extrabold mb-8">Dashboard do Time</h1>
+                
+                <section class="mb-12">
+                    <h2 class="text-2xl font-bold mb-4 border-b border-dark-700 pb-2">Estatísticas</h2>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-dark-800 p-4 rounded-xl shadow-lg border border-dark-700">
+                        
+                        <div class="p-4 bg-dark-700 rounded-lg border-b-2 border-green-500 text-center">
+                            <p class="text-3xl font-extrabold text-green-400">3</p>
+                            <p class="text-xs text-gray-400 mt-1">Vitórias</p>
+                        </div>
+
+                        <div class="p-4 bg-dark-700 rounded-lg border-b-2 border-red-500 text-center">
+                            <p class="text-3xl font-extrabold text-red-400">1</p>
+                            <p class="text-xs text-gray-400 mt-1">Derrotas</p>
+                        </div>
+                        
+                        <div class="p-4 bg-dark-700 rounded-lg border-b-2 border-yellow-500 text-center">
+                            <p class="text-3xl font-extrabold text-yellow-400">10</p>
+                            <p class="text-xs text-gray-400 mt-1">Gols Pró</p>
+                        </div>
+                        
+                        <div class="p-4 bg-dark-700 rounded-lg border-b-2 border-brand-purple text-center">
+                            <p class="text-3xl font-extrabold text-brand-purple">4</p>
+                            <p class="text-xs text-gray-400 mt-1">Gols Contra</p>
+                        </div>
+                        
+                    </div>
+                </section>
+                
+                <section>
+                    <h2 class="text-2xl font-bold mb-4 border-b border-dark-700 pb-2">Elenco</h2>
+                    <div class="bg-dark-800 rounded-xl overflow-hidden shadow-xl border border-dark-700">
+                        
+                        <div class="hidden sm:grid grid-cols-4 text-sm font-semibold text-gray-400 p-4 border-b border-dark-700 bg-dark-700/50">
+                            <div class="col-span-2">Jogadora</div>
+                            <div>Posição</div>
+                            <div class="text-right">Número</div>
+                        </div>
+                        
+                        <div class="text-base divide-y divide-dark-700/50">
+                            
+                            <a href="perfil_copa.html" class="grid grid-cols-2 sm:grid-cols-4 items-center p-4 hover:bg-dark-700/30 transition-colors">
+                                <div class="col-span-2 flex items-center gap-3">
+                                    <div class="w-10 h-10 bg-dark-700 rounded-full flex items-center justify-center text-sm font-bold border border-brand-purple/50">ER</div>
+                                    <span class="font-medium">Elena Ramirez</span>
+                                </div>
+                                <div class="text-sm text-gray-400 sm:text-dark-100">Atacante</div>
+                                <div class="text-right font-bold text-brand-purple">9</div>
+                            </a>
+                            
+                            <a href="perfil_copa.html" class="grid grid-cols-2 sm:grid-cols-4 items-center p-4 hover:bg-dark-700/30 transition-colors">
+                                <div class="col-span-2 flex items-center gap-3">
+                                    <div class="w-10 h-10 bg-dark-700 rounded-full flex items-center justify-center text-sm font-bold border border-brand-purple/50">SZ</div>
+                                    <span class="font-medium">Sofia Zhang</span>
+                                </div>
+                                <div class="text-sm text-gray-400 sm:text-dark-100">Meio Campo</div>
+                                <div class="text-right font-bold text-brand-purple">10</div>
+                            </a>
+                            
+                            <a href="perfil_copa.html" class="grid grid-cols-2 sm:grid-cols-4 items-center p-4 hover:bg-dark-700/30 transition-colors">
+                                <div class="col-span-2 flex items-center gap-3">
+                                    <div class="w-10 h-10 bg-dark-700 rounded-full flex items-center justify-center text-sm font-bold border border-brand-purple/50">IR</div>
+                                    <span class="font-medium">Isabella Rossi</span>
+                                </div>
+                                <div class="text-sm text-gray-400 sm:text-dark-100">Zagueira</div>
+                                <div class="text-right font-bold text-brand-purple">3</div>
+                            </a>
+                            
+                            <a href="perfil_copa.html" class="grid grid-cols-2 sm:grid-cols-4 items-center p-4 hover:bg-dark-700/30 transition-colors">
+                                <div class="col-span-2 flex items-center gap-3">
+                                    <div class="w-10 h-10 bg-dark-700 rounded-full flex items-center justify-center text-sm font-bold border border-brand-purple/50">AC</div>
+                                    <span class="font-medium">Ava Carter</span>
+                                </div>
+                                <div class="text-sm text-gray-400 sm:text-dark-100">Goleira</div>
+                                <div class="text-right font-bold text-brand-purple">1</div>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="mt-12">
+                    <h2 class="text-2xl font-bold mb-4 border-b border-dark-700 pb-2">Locais de Partida</h2>
+                    <div class="rounded-xl overflow-hidden shadow-xl border border-dark-700 aspect-video">
+                        <img src="https://st4.depositphotos.com/31006582/41717/v/1600/depositphotos_417174300-stock-illustration-detailed-map-sao-paulo-city.jpg"
+                            alt="Mapa com locais de partida"
+                            class="w-full h-full object-cover">
+                    </div>
+                </section>
+            </main>
+            
+        </div>
+    </div>
+    <footer class="bg-dark-800 mt-16 border-t border-dark-700 shadow-md">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div
+                class="flex flex-col sm:flex-row justify-between items-center gap-6">
+                <div class="text-center sm:text-left"><a
+                        class="flex items-center justify-center sm:justify-start gap-3"><span
+                            class="text-xl font-bold">Passa a Bola</span></a>
+                </div>
+                <div class="text-center text-sm text-gray-500">
+                    <p>&copy; 2025 Passa a Bola. Todos os direitos reservados.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Passa a Bola - Dashboard</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style type="text/tailwindcss">
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              purple: '#8A2BE2',
+              'purple-hover': '#7b24cb',
+            },
+            dark: {
+              100: '#EAEAEA',
+              500: '#3a3a3a',
+              600: '#2c2c2c',
+              700: '#1f1f1f',
+              800: '#1c1c1c',
+              900: '#121212',
+            },
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="bg-dark-900 text-dark-100 min-h-screen">
+  <!-- Navbar -->
+  <header class="bg-dark-800 border-b border-dark-700">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="index.html" class="text-2xl font-bold text-brand-purple">
+        Passa a Bola
+      </a>
+
+      <nav class="hidden md:flex space-x-6 text-sm">
+        <a href="index.html" class="text-brand-purple font-semibold">Dashboard</a>
+        <a href="src/pages/times.html" class="text-gray-300 hover:text-white">Times</a>
+        <a href="src/pages/partidas.html" class="text-gray-300 hover:text-white">Partidas</a>
+        <a href="src/pages/classificacao.html" class="text-gray-300 hover:text-white">Classificação</a>
+      </nav>
+
+      <button
+        id="btn-logout"
+        class="text-xs px-3 py-2 border border-dark-600 rounded-lg text-gray-300 hover:bg-dark-700"
+      >
+        Sair
+      </button>
+    </div>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main class="max-w-6xl mx-auto px-4 py-10">
+    <section class="mb-8">
+      <h1 class="text-3xl font-extrabold mb-2">Dashboard</h1>
+      <p class="text-gray-400 text-sm">
+        Resumo geral da sua temporada. Use o menu para ver detalhes de times, partidas e classificação.
+      </p>
+    </section>
+
+    <!-- Cards de resumo -->
+    <section id="resumo" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+      <!-- cards preenchidos via JS -->
+    </section>
+
+    <!-- Últimas partidas / destaque -->
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div class="bg-dark-800 border border-dark-700 rounded-2xl p-6 shadow-lg">
+        <h2 class="text-lg font-semibold mb-4">Próximas Partidas</h2>
+        <ul id="lista-partidas" class="space-y-3 text-sm text-gray-200">
+          <!-- preenchido via JS -->
+        </ul>
+      </div>
+
+      <div class="bg-dark-800 border border-dark-700 rounded-2xl p-6 shadow-lg">
+        <h2 class="text-lg font-semibold mb-4">Top 3 da Tabela</h2>
+        <ol id="top-tabela" class="space-y-2 text-sm text-gray-200">
+          <!-- preenchido via JS -->
+        </ol>
+      </div>
+    </section>
+
+    <p id="dashboard-erro" class="text-red-400 text-sm mt-6"></p>
+  </main>
+
+  <script>
+    // Proteção básica: precisa estar logado
+    const token = localStorage.getItem('authToken');
+    if (!token) {
+      // se não estiver logado, manda pro login
+      window.location.href = 'src/pages/entrar.html';
+    }
+
+    // Logout
+    document.getElementById('btn-logout').addEventListener('click', () => {
+      localStorage.removeItem('authToken');
+      window.location.href = 'src/pages/entrar.html';
+    });
+
+    const resumoDiv = document.getElementById('resumo');
+    const listaPartidas = document.getElementById('lista-partidas');
+    const topTabela = document.getElementById('top-tabela');
+    const erroDash = document.getElementById('dashboard-erro');
+
+    async function carregarDashboard() {
+      try {
+        erroDash.textContent = '';
+
+        const [resTimes, resPartidas, resClassificacao] = await Promise.all([
+          fetch('http://localhost:3000/times'),
+          fetch('http://localhost:3000/partidas'),
+          fetch('http://localhost:3000/classificacao'),
+        ]);
+
+        if (!resTimes.ok || !resPartidas.ok || !resClassificacao.ok) {
+          throw new Error('Erro ao carregar dados do servidor.');
+        }
+
+        const times = await resTimes.json();
+        const partidas = await resPartidas.json();
+        const classificacao = await resClassificacao.json();
+
+        // Cards de resumo
+        const totalTimes = times.length;
+        const totalPartidas = partidas.length;
+        const lider = classificacao.sort((a, b) => b.pontos - a.pontos)[0];
+
+        resumoDiv.innerHTML = `
+          <div class="bg-dark-800 border border-dark-700 rounded-2xl p-6 shadow-lg">
+            <p class="text-sm text-gray-400">Times cadastrados</p>
+            <p class="text-3xl font-bold mt-2">${totalTimes}</p>
+          </div>
+          <div class="bg-dark-800 border border-dark-700 rounded-2xl p-6 shadow-lg">
+            <p class="text-sm text-gray-400">Partidas registradas</p>
+            <p class="text-3xl font-bold mt-2">${totalPartidas}</p>
+          </div>
+          <div class="bg-dark-800 border border-dark-700 rounded-2xl p-6 shadow-lg">
+            <p class="text-sm text-gray-400">Líder da tabela</p>
+            <p class="text-xl font-semibold mt-2">${lider ? lider.time : '—'}</p>
+            <p class="text-xs text-gray-400 mt-1">${lider ? lider.pontos + ' pts' : ''}</p>
+          </div>
+        `;
+
+        // Lista de partidas (máx 4)
+        listaPartidas.innerHTML = '';
+        partidas.slice(0, 4).forEach((p) => {
+          const li = document.createElement('li');
+          li.innerHTML = `
+            <div class="flex justify-between items-center bg-dark-700 rounded-xl px-4 py-3">
+              <div>
+                <p class="font-semibold">${p.timeCasa} x ${p.timeFora}</p>
+                <p class="text-xs text-gray-400">${p.data} • ${p.local}</p>
+              </div>
+              <span class="text-sm font-bold">
+                ${p.golsCasa} x ${p.golsFora}
+              </span>
+            </div>
+          `;
+          listaPartidas.appendChild(li);
+        });
+
+        // Top 3 classificação
+        topTabela.innerHTML = '';
+        classificacao
+          .sort((a, b) => b.pontos - a.pontos)
+          .slice(0, 3)
+          .forEach((t, idx) => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+              <div class="flex justify-between items-center bg-dark-700 rounded-xl px-4 py-2">
+                <span class="flex items-center gap-2">
+                  <span class="text-xs px-2 py-1 rounded-full bg-brand-purple text-white">${idx + 1}º</span>
+                  <span class="font-medium">${t.time}</span>
+                </span>
+                <span class="text-xs text-gray-300">${t.pontos} pts • ${t.jogos} jogos</span>
+              </div>
+            `;
+            topTabela.appendChild(li);
+          });
+      } catch (err) {
+        console.error(err);
+        erroDash.textContent = err.message || 'Erro ao montar dashboard.';
+      }
+    }
+
+    carregarDashboard();
+  </script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regras e Regulamento - Copa Passa a Bola</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+        body { font-family: 'Poppins', sans-serif; }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            purple: '#6D28D9',
+                            'purple-light': '#8B5CF6',
+                            'purple-hover': '#5821b0', // Adicionando hover
+                            lavender: '#C4B5FD'
+                        },
+                        dark: {
+                            100: '#EAEAEA',
+                            300: '#B2B2B2',
+                            600: '#2c2c2c',
+                            700: '#1f1f1f',
+                            800: '#1c1c1c',
+                            900: '#121212'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark-900 text-dark-100 min-h-screen">
+    
+    <header class="bg-dark-800/90 backdrop-blur-md sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
+            
+            <a class="flex items-center gap-3 flex-shrink-0">
+                <img class="w-8 h-8">
+                <span class="text-xl font-bold text-brand-lavender">Copa Passa a Bola</span>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+                <a href="copa.html" class="hover:text-brand-purple-light transition-colors">Início</a>
+                <a href="times.html" class="hover:text-brand-purple-light transition-colors">Times</a>
+                <a href="cadastro_time.html" class="hover:text-brand-purple-light transition-colors whitespace-nowrap">Cadastro Time</a>
+                <a href="cadastro_jogadora.html" class="hover:text-brand-purple-light transition-colors whitespace-nowrap">Cadastro Jogadora</a>
+                <a href="regras.html" class="text-brand-lavender font-bold border-b-2 border-brand-lavender pb-1">Regras</a>
+                <a href="meu_time.html" class="hover:text-brand-purple-light transition-colors whitespace-nowrap">Meu Time</a>
+            </div>
+
+            <div class="flex items-center gap-4 flex-shrink-0">
+                <button class="hover:text-brand-purple-light transition-colors p-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </button>
+                
+                <a href="perfil_copa.html" class="block w-8 h-8 rounded-full overflow-hidden border-2 border-brand-purple hover:border-brand-purple-light transition-colors">
+                    <img src="https://media.istockphoto.com/id/1468586173/pt/foto/portrait-of-a-female-soccer-player-holding-a-soccer-ball-in-the-field.webp?a=1&b=1&s=612x612&w=0&k=20&c=fKQJIRqEFBg8lZtv6FOQWGssIpf6d1tlQeZ8M8srNhU=" alt="Foto do perfil" class="w-full h-full object-cover">
+                </a>
+                
+                <button id="menu-button" class="md:hidden hover:text-brand-purple-light transition-colors p-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+            
+        </nav>
+        </header>
+    
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="max-w-3xl mx-auto bg-dark-800 p-6 sm:p-10 rounded-xl shadow-2xl shadow-dark-700/50">
+            <h1 class="text-3xl sm:text-4xl font-extrabold mb-10 text-white border-b border-brand-purple/50 pb-4">Regras e Regulamento</h1>
+            
+            <div class="space-y-10 leading-relaxed">
+                <section class="border-l-4 border-brand-purple pl-4">
+                    <h2 class="text-xl sm:text-2xl font-bold text-brand-lavender mb-3">Regras Gerais</h2>
+                    <p class="text-dark-300">A Copa Passa a Bola é um campeonato de futebol feminino
+                        criado para promover o espírito esportivo, o trabalho em
+                        equipe e o fair play. Todos os participantes devem
+                        cumprir as seguintes regras e regulamentos para garantir
+                        uma experiência segura e agradável para todos os
+                        envolvidos.</p>
+                </section>
+                
+                <section class="border-l-4 border-brand-purple pl-4">
+                    <h2 class="text-xl sm:text-2xl font-bold text-brand-lavender mb-3">Elegibilidade</h2>
+                    <p class="text-dark-300">As participantes devem ser do sexo feminino e ter pelo
+                        menos 18 anos de idade. Cada equipe deve ser composta
+                        por no mínimo 11 jogadoras e no máximo 18. Todos os
+                        jogadores devem estar registrados na liga antes do
+                        início do campeonato.</p>
+                </section>
+                
+                <section class="border-l-4 border-brand-purple pl-4">
+                    <h2 class="text-xl sm:text-2xl font-bold text-brand-lavender mb-3">Formato do Jogo</h2>
+                    <p class="text-dark-300">Os jogos serão disputados em dois tempos de 45 minutos
+                        cada, com intervalo de 15 minutos. Em caso de empate na
+                        fase eliminatória, será disputada uma prorrogação de 15
+                        minutos em cada tempo, seguida de pênaltis se o placar
+                        permanecer empatado.</p>
+                </section>
+                
+                <section class="bg-dark-700 p-6 rounded-lg border-l-4 border-red-500 shadow-xl">
+                    <h2 class="text-xl sm:text-2xl font-bold text-white mb-3 flex items-center gap-2">
+                         <span class="text-red-400">🚨</span> Código de Conduta</h2>
+                    <p class="text-dark-300">Jogadores, técnicos e espectadores devem se comportar de
+                        maneira respeitosa e esportiva em todos os momentos.
+                        Qualquer forma de assédio, discriminação ou
+                        comportamento antidesportivo não será tolerada e poderá
+                        resultar em medidas disciplinares.</p>
+                </section>
+                
+                <section class="border-l-4 border-brand-purple pl-4">
+                    <h2 class="text-xl sm:text-2xl font-bold text-brand-lavender mb-3">Ações Disciplinares</h2>
+                    <p class="text-dark-300">Cartões amarelos serão aplicados em caso de faltas e
+                        conduta antidesportiva. Dois cartões amarelos em uma
+                        mesma partida resultarão em cartão vermelho e expulsão
+                        imediata do jogo. Um cartão vermelho também será
+                        aplicado em caso de faltas graves, conduta violenta ou
+                        linguagem abusiva. Jogadores que receberem cartão
+                        vermelho serão suspensos por pelo menos uma partida.</p>
+                </section>
+                
+                <section class="border-l-4 border-brand-purple pl-4">
+                    <h2 class="text-xl sm:text-2xl font-bold text-brand-lavender mb-3">Apelações</h2>
+                    <p class="text-dark-300">As equipes têm o direito de apelar de qualquer ação
+                        disciplinar ou resultado do jogo dentro de 48 horas após
+                        o incidente. Os recursos devem ser apresentados por
+                        escrito ao comitê disciplinar da liga, juntamente com
+                        quaisquer evidências que os sustentem.</p>
+                </section>
+                
+                <section class="border-l-4 border-brand-purple pl-4">
+                    <h2 class="text-xl sm:text-2xl font-bold text-brand-lavender mb-3">Emendas</h2>
+                    <p class="text-dark-300">A liga reserva-se o direito de alterar estas regras e
+                        regulamentos a qualquer momento, com ou sem aviso
+                        prévio. Quaisquer alterações serão comunicadas a todas
+                        as equipes participantes e entrarão em vigor
+                        imediatamente.</p>
+                </section>
+                
+            </div>
+        </div>
+    </main>
+    
+    <footer class="bg-dark-800 mt-16 border-t border-dark-700">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-6">
+                <div class="text-center sm:text-left">
+                    <a class="flex items-center justify-center sm:justify-start gap-3">
+                        <img class="w-8 h-8">
+                        <span class="text-xl font-bold text-brand-lavender">Passa a Bola</span>
+                    </a>
+                </div>
+                <div class="text-center text-sm text-gray-500">
+                    <p>&copy; 2025 Passa a Bola. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
