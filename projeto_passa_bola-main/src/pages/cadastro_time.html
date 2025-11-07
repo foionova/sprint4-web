@@ -17,7 +17,7 @@
                         brand: {
                             purple: '#6D28D9',
                             'purple-light': '#8B5CF6',
-                            'purple-hover': '#5821b0', // Adicionado hover
+                            'purple-hover': '#5821b0',
                             lavender: '#C4B5FD'
                         },
                         dark: {
@@ -85,104 +85,142 @@
   </nav>
 </header>
     
-    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="max-w-3xl mx-auto bg-dark-800 rounded-2xl shadow-2xl shadow-brand-purple/20 p-8 md:p-12 border border-dark-700">
-            
-            <h1 class="text-3xl sm:text-4xl font-extrabold mb-2 text-brand-white">Registro de Time</h1>
-            <p class="text-gray-400 mb-8 text-base">Insira os dados do seu time para participar da Copa Passa a Bola.</p>
-            
-            <form action="#" class="space-y-6">
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    
-                    <div>
-                        <label for="nome-time" class="text-sm font-medium text-gray-300 block mb-1">Nome do Time <span class="text-red-500">*</span></label>
-                        <input type="text" id="nome-time" required
-                            placeholder="Ex: Guerreiras da Bola FC"
-                            class="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-purple transition-colors">
-                    </div>
-                    
-                    <div>
-                        <label for="num-jogadoras" class="text-sm font-medium text-gray-300 block mb-1">Número de Jogadoras <span class="text-red-500">*</span></label>
-                        <input type="number" id="num-jogadoras" required min="11" max="18"
-                            placeholder="Mínimo 11, máximo 18"
-                            class="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-purple transition-colors">
-                    </div>
-                    
-                    <div>
-                        <label for="cor-uniforme" class="text-sm font-medium text-gray-300 block mb-1">Cor Principal do Uniforme <span class="text-red-500">*</span></label>
-                        <input type="text" id="cor-uniforme" required
-                            placeholder="Ex: Vermelho e Preto"
-                            class="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-purple transition-colors">
-                    </div>
-                    
-                    <div>
-                        <label for="nome-treinadora" class="text-sm font-medium text-gray-300 block mb-1">Nome da Treinadora/Capitã <span class="text-red-500">*</span></label>
-                        <input type="text" id="nome-treinadora" required
-                            placeholder="Nome Completo"
-                            class="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-purple transition-colors">
-                    </div>
-                </div>
-                
-                <div>
-                    <label for="historia-time" class="text-sm font-medium text-gray-300 block mb-1">História do Time</label>
-                    <textarea id="historia-time" rows="4"
-                        placeholder="Conte-nos um pouco sobre a história e os valores do seu time."
-                        class="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-purple transition-colors"></textarea>
-                </div>
-                
-                <div>
-                    <label for="logo-upload" class="text-sm font-medium text-gray-300 block mb-1">Carregue o escudo/logo do time</label>
-                    <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-dark-600 border-dashed rounded-xl bg-dark-700 hover:border-brand-purple transition-colors cursor-pointer">
-                        <div class="space-y-1 text-center">
-                            <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
-                                <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28m0 0l4 4m4-24h8m-4-4v8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                            <div class="flex text-sm text-gray-400">
-                                <label for="file-upload" class="relative cursor-pointer rounded-md font-medium text-brand-purple-light hover:text-brand-purple focus-within:outline-none">
-                                    <span>Carregar o logo</span>
-                                    <input id="file-upload" name="file-upload" type="file" class="sr-only">
-                                </label>
-                                <p class="pl-1">ou arraste e solte</p>
-                            </div>
-                            <p class="text-xs text-gray-500">PNG, JPG, GIF até 10MB</p>
-                        </div>
-                    </div>
-                </div>
+<main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <div class="max-w-3xl mx-auto bg-dark-800 rounded-2xl shadow-2xl shadow-brand-purple/20 p-8 md:p-12 border border-dark-700">
+      
+      <h1 class="text-3xl sm:text-4xl font-extrabold mb-2 text-brand-white">Registro de Time</h1>
+      <p class="text-gray-400 mb-8 text-base">Insira os dados do seu time para participar da Copa Passa a Bola.</p>
+      
+      <!-- FORM COM ID -->
+      <form id="form-time" action="#" class="space-y-6">
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              
+              <div>
+                  <label for="nome-time" class="text-sm font-medium text-gray-300 block mb-1">Nome do Time <span class="text-red-500">*</span></label>
+                  <input type="text" id="nome-time" required
+                      placeholder="Ex: Guerreiras da Bola FC"
+                      class="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-purple transition-colors">
+              </div>
+              
+              <div>
+                  <label for="num-jogadoras" class="text-sm font-medium text-gray-300 block mb-1">Número de Jogadoras <span class="text-red-500">*</span></label>
+                  <input type="number" id="num-jogadoras" required min="11" max="18"
+                      placeholder="Mínimo 11, máximo 18"
+                      class="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-purple transition-colors">
+              </div>
+              
+              <div>
+                  <label for="cor-uniforme" class="text-sm font-medium text-gray-300 block mb-1">Cor Principal do Uniforme <span class="text-red-500">*</span></label>
+                  <input type="text" id="cor-uniforme" required
+                      placeholder="Ex: Vermelho e Preto"
+                      class="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-purple transition-colors">
+              </div>
+              
+              <div>
+                  <label for="nome-treinadora" class="text-sm font-medium text-gray-300 block mb-1">Nome da Treinadora/Capitã <span class="text-red-500">*</span></label>
+                  <input type="text" id="nome-treinadora" required
+                      placeholder="Nome Completo"
+                      class="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-purple transition-colors">
+              </div>
+          </div>
+          
+          <div>
+              <label for="historia-time" class="text-sm font-medium text-gray-300 block mb-1">História do Time</label>
+              <textarea id="historia-time" rows="4"
+                  placeholder="Conte-nos um pouco sobre a história e os valores do seu time."
+                  class="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-purple transition-colors"></textarea>
+          </div>
+          
+          <div>
+              <label for="logo-upload" class="text-sm font-medium text-gray-300 block mb-1">Carregue o escudo/logo do time</label>
+              <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-dark-600 border-dashed rounded-xl bg-dark-700 hover:border-brand-purple transition-colors cursor-pointer">
+                  <div class="space-y-1 text-center">
+                      <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                          <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28m0 0l4 4m4-24h8m-4-4v8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                      <div class="flex text-sm text-gray-400">
+                          <label for="file-upload" class="relative cursor-pointer rounded-md font-medium text-brand-purple-light hover:text-brand-purple focus-within:outline-none">
+                              <span>Carregar o logo</span>
+                              <input id="file-upload" name="file-upload" type="file" class="sr-only">
+                          </label>
+                          <p class="pl-1">ou arraste e solte</p>
+                      </div>
+                      <p class="text-xs text-gray-500">PNG, JPG, GIF até 10MB</p>
+                  </div>
+              </div>
+          </div>
 
-                <div class="flex items-center gap-2 pt-4">
-                    <input type="checkbox" id="termos" required
-                        class="h-4 w-4 bg-dark-700 border-dark-600 text-brand-purple focus:ring-brand-purple rounded cursor-pointer">
-                    <label for="termos" class="text-sm select-none">Eu concordo com os <a href="regras.html" class="font-semibold text-brand-purple hover:text-brand-purple-light transition-colors">termos e regras</a> do Copa Passa a Bola.</label>
-                </div>
-                
-                <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4">
-                    <button type="submit"
-                        class="w-full sm:w-auto py-3 px-8 bg-brand-purple text-white font-bold rounded-xl hover:bg-brand-purple-hover transition-colors shadow-lg">Finalizar
-                        Registro</button>
-                    <a href="cadastro_jogadora.html"
-                        class="w-full sm:w-auto text-center py-3 px-6 text-brand-lavender font-semibold rounded-xl hover:bg-dark-700 transition-colors border border-dark-700 hover:border-brand-purple-light">
-                        Adicionar Jogadoras Depois &rarr;
-                    </a>
-                </div>
-            </form>
-        </div>
-    </main>
+          <div class="flex items-center gap-2 pt-4">
+              <input type="checkbox" id="termos" required
+                  class="h-4 w-4 bg-dark-700 border-dark-600 text-brand-purple focus:ring-brand-purple rounded cursor-pointer">
+              <label for="termos" class="text-sm select-none">Eu concordo com os <a href="regras.html" class="font-semibold text-brand-purple hover:text-brand-purple-light transition-colors">termos e regras</a> do Copa Passa a Bola.</label>
+          </div>
+          
+          <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4">
+              <button type="submit"
+                  class="w-full sm:w-auto py-3 px-8 bg-brand-purple text-white font-bold rounded-xl hover:bg-brand-purple-hover transition-colors shadow-lg">Finalizar
+                  Registro</button>
+              <a href="cadastro_jogadora.html"
+                  class="w-full sm:w-auto text-center py-3 px-6 text-brand-lavender font-semibold rounded-xl hover:bg-dark-700 transition-colors border border-dark-700 hover:border-brand-purple-light">
+                  Adicionar Jogadoras Depois &rarr;
+              </a>
+          </div>
+      </form>
+  </div>
+</main>
     
-    <footer class="bg-dark-800 mt-16 border-t border-dark-700 shadow-md">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div
-                class="flex flex-col sm:flex-row justify-between items-center gap-6">
-                <div class="text-center sm:text-left"><a
-                        class="flex items-center justify-center sm:justify-start gap-3 text-brand-purple"><img
-                            class="w-8 h-8"><span
-                            class="text-xl font-bold">Passa a Bola</span></a>
-                </div>
-                <div class="text-center text-sm text-gray-500">
-                    <p>&copy; 2025 Passa a Bola. Todos os direitos reservados.</p>
-                </div>
+<footer class="bg-dark-800 mt-16 border-t border-dark-700 shadow-md">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div
+            class="flex flex-col sm:flex-row justify-between items-center gap-6">
+            <div class="text-center sm:text-left"><a
+                    class="flex items-center justify-center sm:justify-start gap-3 text-brand-purple"><img
+                        class="w-8 h-8"><span
+                        class="text-xl font-bold">Passa a Bola</span></a>
+            </div>
+            <div class="text-center text-sm text-gray-500">
+                <p>&copy; 2025 Passa a Bola. Todos os direitos reservados.</p>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
+
+<!-- JS INTEGRAÇÃO BACKEND -->
+<script>
+  const formTime = document.getElementById('form-time');
+
+  formTime.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const body = {
+      nome: document.getElementById('nome-time').value.trim(),
+      numeroJogadoras: Number(document.getElementById('num-jogadoras').value),
+      corUniforme: document.getElementById('cor-uniforme').value.trim(),
+      treinadora: document.getElementById('nome-treinadora').value.trim(),
+      historia: document.getElementById('historia-time').value.trim()
+      // se seu backend tiver campo pra logo, adiciona aqui
+    };
+
+    try {
+      const resp = await fetch('http://localhost:3000/times', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      });
+
+      if (!resp.ok) {
+        const msg = await resp.text();
+        throw new Error(msg || 'Falha ao cadastrar time');
+      }
+
+      alert('Time cadastrado com sucesso!');
+      formTime.reset();
+    } catch (err) {
+      console.error(err);
+      alert('Erro ao cadastrar time: ' + err.message);
+    }
+  });
+</script>
 </body>
 </html>

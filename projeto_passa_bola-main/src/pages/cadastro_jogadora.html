@@ -9,14 +9,13 @@
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
         body { font-family: 'Poppins', sans-serif; }
 
-        /* Estilo Customizado para o Range Input (Elemento Interativo) */
         input[type="range"]::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
             width: 16px;
             height: 16px;
             border-radius: 50%;
-            background: #6D28D9; /* brand-purple */
+            background: #6D28D9;
             cursor: pointer;
             box-shadow: 0 0 0 4px rgba(109, 40, 217, 0.3);
             transition: all 0.2s;
@@ -108,106 +107,146 @@
   </nav>
 </header>
     
-    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="max-w-3xl mx-auto bg-dark-800 rounded-2xl shadow-2xl shadow-brand-purple/20 p-8 md:p-12 border border-dark-700">
-            
-            <h1 class="text-3xl sm:text-4xl font-extrabold mb-2 text-brand-white">Registro de Jogadora</h1>
-            <p class="text-gray-400 mb-8 text-base">Preencha seus dados para entrar na lista de atletas da Copa Passa a Bola.</p>
-            
-            <form action="#" class="space-y-6">
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    
-                    <div>
-                        <label for="nome-completo" class="text-sm font-medium text-gray-300 block mb-1">Nome Completo <span class="text-red-500">*</span></label>
-                        <input type="text" id="nome-completo" required
-                            placeholder="Nome e Sobrenome"
-                            class="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-purple transition-colors">
-                    </div>
-                    
-                    <div>
-                        <label for="email" class="text-sm font-medium text-gray-300 block mb-1">Email <span class="text-red-500">*</span></label>
-                        <input type="email" id="email" required
-                            placeholder="seu.email@exemplo.com"
-                            class="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-purple transition-colors">
-                    </div>
-                    
-                    <div>
-                        <label for="telefone" class="text-sm font-medium text-gray-300 block mb-1">Número de Telefone</label>
-                        <input type="tel" id="telefone"
-                            placeholder="(XX) XXXXX-XXXX"
-                            class="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-purple transition-colors">
-                    </div>
-                    
-                    <div>
-                        <label for="camiseta" class="text-sm font-medium text-gray-300 block mb-1">Número da Camiseta <span class="text-red-500">*</span></label>
-                        <input type="number" id="camiseta" required min="1" max="99"
-                            placeholder="Ex: 10"
-                            class="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-purple transition-colors">
-                    </div>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-dark-700">
-                    
-                    <div class="relative">
-                        <label for="posicao" class="text-sm font-medium text-gray-300 block mb-1">Posição Preferencial <span class="text-red-500">*</span></label>
-                        <select id="posicao" required
-                            class="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-purple appearance-none pr-10 transition-colors">
-                            <option value="">Insira a posição que prefere jogar</option>
-                            <option value="Goleira">Goleira</option>
-                            <option value="Defensora">Defensora</option>
-                            <option value="Meio-campista">Meio-campista</option>
-                            <option value="Atacante">Atacante</option>
-                        </select>
-                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400 mt-6">
-                            <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                            </svg>
-                        </div>
-                    </div>
-                    
-                    <div>
-                         <label for="time-afiliado" class="text-sm font-medium text-gray-300 block mb-1">Time Afiliado (Opcional)</label>
-                        <input type="text" id="time-afiliado"
-                            placeholder="Time em que joga atualmente"
-                            class="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-purple transition-colors">
-                    </div>
+<main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <div class="max-w-3xl mx-auto bg-dark-800 rounded-2xl shadow-2xl shadow-brand-purple/20 p-8 md:p-12 border border-dark-700">
+      
+      <h1 class="text-3xl sm:text-4xl font-extrabold mb-2 text-brand-white">Registro de Jogadora</h1>
+      <p class="text-gray-400 mb-8 text-base">Preencha seus dados para entrar na lista de atletas da Copa Passa a Bola.</p>
+      
+      <!-- FORM COM ID -->
+      <form id="form-jogadora" action="#" class="space-y-6">
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              
+              <div>
+                  <label for="nome-completo" class="text-sm font-medium text-gray-300 block mb-1">Nome Completo <span class="text-red-500">*</span></label>
+                  <input type="text" id="nome-completo" required
+                      placeholder="Nome e Sobrenome"
+                      class="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-purple transition-colors">
+              </div>
+              
+              <div>
+                  <label for="email" class="text-sm font-medium text-gray-300 block mb-1">Email <span class="text-red-500">*</span></label>
+                  <input type="email" id="email" required
+                      placeholder="seu.email@exemplo.com"
+                      class="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-purple transition-colors">
+              </div>
+              
+              <div>
+                  <label for="telefone" class="text-sm font-medium text-gray-300 block mb-1">Número de Telefone</label>
+                  <input type="tel" id="telefone"
+                      placeholder="(XX) XXXXX-XXXX"
+                      class="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-purple transition-colors">
+              </div>
+              
+              <div>
+                  <label for="camiseta" class="text-sm font-medium text-gray-300 block mb-1">Número da Camiseta <span class="text-red-500">*</span></label>
+                  <input type="number" id="camiseta" required min="1" max="99"
+                      placeholder="Ex: 10"
+                      class="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-purple transition-colors">
+              </div>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-dark-700">
+              
+              <div class="relative">
+                  <label for="posicao" class="text-sm font-medium text-gray-300 block mb-1">Posição Preferencial <span class="text-red-500">*</span></label>
+                  <select id="posicao" required
+                      class="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-purple appearance-none pr-10 transition-colors">
+                      <option value="">Insira a posição que prefere jogar</option>
+                      <option value="Goleira">Goleira</option>
+                      <option value="Defensora">Defensora</option>
+                      <option value="Meio-campista">Meio-campista</option>
+                      <option value="Atacante">Atacante</option>
+                  </select>
+                  <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400 mt-6">
+                      <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                          <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                      </svg>
+                  </div>
+              </div>
+              
+              <div>
+                   <label for="time-afiliado" class="text-sm font-medium text-gray-300 block mb-1">Time Afiliado (Opcional)</label>
+                  <input type="text" id="time-afiliado"
+                      placeholder="Time em que joga atualmente"
+                      class="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-purple transition-colors">
+              </div>
 
-                    <div class="md:col-span-2">
-                        <label for="experiencia" class="text-sm font-medium text-gray-300 block mb-3">Nível de Experiência (1=Iniciante, 5=Avançado)</label>
-                        <input type="range" id="experiencia" min="1" max="5" value="3"
-                            class="w-full h-2 bg-dark-600 rounded-lg appearance-none cursor-pointer">
-                    </div>
-                </div>
+              <div class="md:col-span-2">
+                  <label for="experiencia" class="text-sm font-medium text-gray-300 block mb-3">Nível de Experiência (1=Iniciante, 5=Avançado)</label>
+                  <input type="range" id="experiencia" min="1" max="5" value="3"
+                      class="w-full h-2 bg-dark-600 rounded-lg appearance-none cursor-pointer">
+              </div>
+          </div>
 
-                <div class="pt-4 border-t border-dark-700">
-                    <div class="flex items-center gap-2 mb-6">
-                        <input type="checkbox" id="jogadora-livre"
-                            class="h-4 w-4 bg-dark-700 border-dark-600 text-brand-purple focus:ring-brand-purple rounded cursor-pointer">
-                        <label for="jogadora-livre" class="text-sm select-none">Registrar como **jogadora livre** (disponível para times).</label>
-                    </div>
-                    
-                    <button type="submit"
-                        class="w-full py-3 bg-brand-purple text-white font-bold rounded-xl hover:bg-brand-purple-hover transition-colors shadow-lg">Registrar Jogadora</button>
-                </div>
-            </form>
-        </div>
-    </main>
+          <div class="pt-4 border-t border-dark-700">
+              <div class="flex items-center gap-2 mb-6">
+                  <input type="checkbox" id="jogadora-livre"
+                      class="h-4 w-4 bg-dark-700 border-dark-600 text-brand-purple focus:ring-brand-purple rounded cursor-pointer">
+                  <label for="jogadora-livre" class="text-sm select-none">Registrar como **jogadora livre** (disponível para times).</label>
+              </div>
+              
+              <button type="submit"
+                  class="w-full py-3 bg-brand-purple text-white font-bold rounded-xl hover:bg-brand-purple-hover transition-colors shadow-lg">Registrar Jogadora</button>
+          </div>
+      </form>
+  </div>
+</main>
     
-    <footer class="bg-dark-800 mt-16 border-t border-dark-700 shadow-md">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div
-                class="flex flex-col sm:flex-row justify-between items-center gap-6">
-                <div class="text-center sm:text-left"><a
-                        class="flex items-center justify-center sm:justify-start gap-3 text-brand-purple"><img
-                            class="w-8 h-8"><span
-                            class="text-xl font-bold">Passa a Bola</span></a>
-                </div>
-                <div class="text-center text-sm text-gray-500">
-                    <p>&copy; 2025 Passa a Bola. Todos os direitos reservados.</p>
-                </div>
+<footer class="bg-dark-800 mt-16 border-t border-dark-700 shadow-md">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div
+            class="flex flex-col sm:flex-row justify-between items-center gap-6">
+            <div class="text-center sm:text-left"><a
+                    class="flex items-center justify-center sm:justify-start gap-3 text-brand-purple"><img
+                        class="w-8 h-8"><span
+                        class="text-xl font-bold">Passa a Bola</span></a>
+            </div>
+            <div class="text-center text-sm text-gray-500">
+                <p>&copy; 2025 Passa a Bola. Todos os direitos reservados.</p>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
+
+<!-- JS INTEGRAÇÃO BACKEND -->
+<script>
+  const formJogadora = document.getElementById('form-jogadora');
+
+  formJogadora.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const body = {
+      nome: document.getElementById('nome-completo').value.trim(),
+      email: document.getElementById('email').value.trim(),
+      telefone: document.getElementById('telefone').value.trim(),
+      numeroCamiseta: Number(document.getElementById('camiseta').value),
+      posicao: document.getElementById('posicao').value,
+      timeAfiliado: document.getElementById('time-afiliado').value.trim(),
+      experiencia: Number(document.getElementById('experiencia').value),
+      jogadoraLivre: document.getElementById('jogadora-livre').checked
+    };
+
+    try {
+      const resp = await fetch('http://localhost:3000/jogadoras', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      });
+
+      if (!resp.ok) {
+        const msg = await resp.text();
+        throw new Error(msg || 'Falha ao cadastrar jogadora');
+      }
+
+      alert('Jogadora cadastrada com sucesso!');
+      formJogadora.reset();
+    } catch (err) {
+      console.error(err);
+      alert('Erro ao cadastrar jogadora: ' + err.message);
+    }
+  });
+</script>
 </body>
 </html>
