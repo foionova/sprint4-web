@@ -29,6 +29,15 @@ const PORT = 3000;
 app.use(cors());
 app.use(express.json());
 
+// "Banco" em memória só pra testar integração
+const times = [
+  { id: '1', nome: 'Corinthians', logoUrl: 'url_logo_corinthians' },
+  { id: '2', nome: 'Palmeiras', logoUrl: 'url_logo_palmeiras' },
+  { id: '3', nome: 'São Paulo', logoUrl: 'url_logo_sao_paulo' },
+];
+
+const jogadoras = [];
+
 // --- ROTAS DA API ---
 
 // Documentação
@@ -87,12 +96,89 @@ app.post('/login', (req, res) => {
  *     summary: Retorna uma lista de times de teste
  */
 app.get('/times', (req, res) => {
-  const timesDeTeste = [
-    { id: '1', nome: 'Corinthians', logoUrl: 'url_logo_corinthians' },
-    { id: '2', nome: 'Palmeiras', logoUrl: 'url_logo_palmeiras' },
-    { id: '3', nome: 'São Paulo', logoUrl: 'url_logo_sao_paulo' },
-  ];
-  res.json(timesDeTeste);
+  res.json(times);
+});
+
+/**
+ * @swagger
+ * /times:
+ *   post:
+ *     summary: Cadastra um novo time (simulado)
+ */
+app.post('/times', (req, res) => {
+  const { nome, numeroJogadoras, corUniforme, treinadora, historia } = req.body;
+
+  if (!nome || !numeroJogadoras || !corUniforme || !treinadora) {
+    return res
+      .status(400)
+      .json({ message: 'Campos obrigatórios do time não enviados.' });
+  }
+
+  const novoTime = {
+    id: String(times.length + 1),
+    nome,
+    numeroJogadoras,
+    corUniforme,
+    treinadora,
+    historia: historia || '',
+  };
+
+  times.push(novoTime);
+  console.log('Novo time cadastrado:', novoTime);
+
+  return res.status(201).json(novoTime);
+});
+
+/**
+ * @swagger
+ * /jogadoras:
+ *   get:
+ *     summary: Lista jogadoras cadastradas (simulado)
+ */
+app.get('/jogadoras', (req, res) => {
+  res.json(jogadoras);
+});
+
+/**
+ * @swagger
+ * /jogadoras:
+ *   post:
+ *     summary: Cadastra uma nova jogadora (simulado)
+ */
+app.post('/jogadoras', (req, res) => {
+  const {
+    nome,
+    email,
+    telefone,
+    numeroCamiseta,
+    posicao,
+    timeAfiliado,
+    experiencia,
+    jogadoraLivre,
+  } = req.body;
+
+  if (!nome || !email || !numeroCamiseta || !posicao) {
+    return res
+      .status(400)
+      .json({ message: 'Campos obrigatórios da jogadora não enviados.' });
+  }
+
+  const novaJogadora = {
+    id: String(jogadoras.length + 1),
+    nome,
+    email,
+    telefone: telefone || '',
+    numeroCamiseta,
+    posicao,
+    timeAfiliado: timeAfiliado || '',
+    experiencia: experiencia || 1,
+    jogadoraLivre: !!jogadoraLivre,
+  };
+
+  jogadoras.push(novaJogadora);
+  console.log('Nova jogadora cadastrada:', novaJogadora);
+
+  return res.status(201).json(novaJogadora);
 });
 
 // --- ROTA PARTIDAS ---
