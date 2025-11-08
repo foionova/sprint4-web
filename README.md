@@ -36,7 +36,7 @@ SPRINT4-WEB-MAIN/
 │  ├─ package.json
 │  └─ package-lock.json
 │
-└─ projeto_passa_bola-main/      # front estático (HTML + Tailwind + JS)
+└─ projeto_passa_bola-main/      # front estático (HTML + Tailwind + JS + React)
    ├─ index.html                 # Dashboard protegido (área logada)
    ├─ src/
    │  └─ pages/
