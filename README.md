@@ -12,6 +12,18 @@ A ideia é usar o MESMO projeto para apresentação em **Web Dev** e **Front-end
 
 ---
 
+## 🚀 Como rodar / abrir o projeto
+
+### 1. Backend (API – Node/Express)
+
+1. Abrir um terminal na raiz do projeto.
+2. Rodar:
+3. O projeto sobe em http://localhost:3000
+```bash
+cd backend
+npm install
+npm run dev
+
 ## 📁 Estrutura do repositório
 
 ```text
